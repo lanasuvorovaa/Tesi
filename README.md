@@ -12,7 +12,7 @@ All'inizio ho preparato note di prova per capire se un piccolo modello linguisti
 
 Con quello che avevo imparato da queste prime prove ho costruito un **primo prototipo** sul Mac, collegando estrazione, classificazione, controlli e selezione delle proposte, con Qwen3-1.7B in locale tramite llama.cpp. Usandolo ho capito che funzionava, ma che andava modificato e migliorato in più punti.
 
-Prima di intervenire ho approfondito come vengono usati in pratica gli small language model: ho cercato materiale online e non solo, per capire come altre persone li provano e li adattano a compiti simili, quali modelli usano e con quali accorgimenti. Da qui sono nati il confronto tra modelli alternativi e una serie di test mirati sui singoli componenti della pipeline.
+Prima di intervenire ho approfondito come vengono usati in pratica gli small language model: ho cercato materiale online, per capire come altre persone li provano e li adattano a compiti simili, quali modelli usano e con quali accorgimenti. Da qui sono nati il confronto tra modelli alternativi e una serie di test mirati sui singoli componenti della pipeline.
 
 Sulla base di questi risultati ho sviluppato una **nuova versione del prototipo**, che usa la configurazione emersa dagli esperimenti ed è quella presente nella cartella [`prototipo/`](prototipo/).
 
