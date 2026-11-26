@@ -20,8 +20,6 @@ Ho tempo fino a **fine febbraio 2027**, cioè circa tre mesi. La priorità è po
 
 ## Le fasi
 
-Legenda: **[essenziale]** = deve esserci nella tesi; **[se c'è tempo]** = lo faccio solo se le fasi essenziali sono in linea con il calendario.
-
 ### Fase 1 — Chiudere UC-01 dal lato del modello [essenziale]
 *30 novembre – 13 dicembre*
 
