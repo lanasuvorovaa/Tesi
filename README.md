@@ -2,6 +2,8 @@
 
 Questo repository raccoglie il prototipo e gli esperimenti che sto svolgendo per la mia tesi. L'obiettivo è costruire un assistente che lavori in locale, interpreti note scritte in linguaggio naturale e **proponga** attività o appuntamenti pertinenti, senza effettuare modifiche automatiche senza conferma.
 
+Il prodotto finale a cui voglio arrivare è un'**applicazione mobile**, per ora per Android (e in seguito, se c'è tempo, anche per iPhone), che esegue un modello linguistico piccolo direttamente sul telefono e copre tre casi d'uso: riconoscere attività, eventi e informazioni nelle note (**UC-01**), collegarle tra loro (**UC-02**) e rispondere a domande sui dati memorizzati (**UC-03**). Il lavoro fatto finora riguarda soprattutto UC-01; obiettivi, fasi e calendario fino alla consegna sono descritti in [`PIANO_DI_LAVORO.md`](PIANO_DI_LAVORO.md).
+
 Il README racconta soprattutto **quali prove ho fatto e perché sono passata da una all'altra**. Il dettaglio di ogni esperimento e i relativi dati sono nella cartella [`esperimenti/`](esperimenti/).
 
 ## Il percorso in breve
@@ -111,7 +113,15 @@ La configurazione **candidata**, che non ho sostituito con le varianti speriment
 
 È la configurazione usata nella nuova versione del prototipo, che si trova in [`prototipo/`](prototipo/) insieme a un breve video dimostrativo.
 
-Adesso il passo successivo è progettare **C2-CTX v02**, con uno schema più semplice e regole più esplicite per distinguere eventi, attività, soggetti, citazioni, desideri e negazioni. Prima di considerarlo un miglioramento, sarà necessario testarlo separatamente e poi valutarlo su **note nuove**, non utilizzate per costruire i prompt o le regole.
+I prossimi passi, in breve:
+
+1. valutare UC-01 su un **set di note nuove**, scritte da altre persone e non usate per costruire prompt o regole, provando anche **C2-CTX v02** in un tempo limitato;
+2. verificare che il modello giri **su un telefono Android**, misurando tempi, memoria e batteria;
+3. costruire un'**app Android minima** (in React Native, così da poterla portare in seguito anche su iPhone) con proposta, conferma, archivio locale e la possibilità di commentare le proposte;
+4. provare **UC-02 e UC-03 in forma ridotta**;
+5. fare un **test con alcuni utenti**, raccogliendo i loro commenti.
+
+Il dettaglio di ogni fase (cosa misuro, quando la considero chiusa, cosa mi serve) è in [`PIANO_DI_LAVORO.md`](PIANO_DI_LAVORO.md).
 
 > **Nota sul metodo:** molte prove riportate qui sono diagnostiche e utilizzano note sintetiche già conosciute. I conteggi qualitativi derivano da revisioni preliminari: non vanno presentati come risultati di una validazione indipendente. I test sul solo classificatore non misurano direttamente i popup finali.
 
@@ -119,6 +129,7 @@ Adesso il passo successivo è progettare **C2-CTX v02**, con uno schema più sem
 
 ```text
 ├── README.md          # questo file: il percorso complessivo
+├── PIANO_DI_LAVORO.md # obiettivo finale, fasi e calendario fino alla consegna
 ├── esperimenti/       # per ogni esperimento: una descrizione (.md) e i dati (-dati.csv)
 └── prototipo/         # nucleo del codice della demo (X0 + C2 + Z + S2-V)
 ```
