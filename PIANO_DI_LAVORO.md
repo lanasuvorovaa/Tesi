@@ -284,11 +284,3 @@ Mancano quindi ancora circa due settimane. Le stime sono indicative e le ricalib
 4. app senza controllo dei duplicati e con commenti più semplici (circa −3).
 
 Con tutti questi tagli il piano scende a circa **80 giorni**, a ridosso del tempo disponibile. M1 (13 dicembre), M2 (20 dicembre) e M3 (17 gennaio) sono i punti in cui controllo se sono in linea.
-
-## Cosa mi serve per partire
-
-- Le **note del set nuovo**, scritte da persone diverse da me (Fase 1).
-- Un **secondo annotatore** per circa 20 note (Fase 1).
-- Almeno un **telefono Android** su cui fare le misure, possibilmente anche uno di fascia media (Fase 2).
-- Le **persone disponibili per il test** dell'app, nella seconda metà di gennaio (Fase 5).
-- Per la prova sui documenti, 8–10 **documenti brevi** non personali o anonimizzati (contratti tipo, regolamenti, bollette di esempio) e le **domande** da fare su ciascuno, scritte prima della prova.
