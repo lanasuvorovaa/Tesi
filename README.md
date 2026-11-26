@@ -2,7 +2,7 @@
 
 Questo repository raccoglie il prototipo e gli esperimenti che sto svolgendo per la mia tesi. L'obiettivo è costruire un assistente che lavori in locale, interpreti note scritte in linguaggio naturale e **proponga** attività o appuntamenti pertinenti, senza effettuare modifiche automatiche senza conferma.
 
-Il README racconta soprattutto **quali prove ho fatto e perché sono passata da una all'altra**. I dati e gli script completi saranno organizzati nelle cartelle degli esperimenti.
+Il README racconta soprattutto quali prove ho fatto e perché sono passata da una all'altra. I dati e gli script completi saranno organizzati nelle cartelle degli esperimenti.
 
 ## Da dove sono partita
 
