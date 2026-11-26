@@ -95,7 +95,7 @@ Un assistente che a ogni frase manda una proposta diventa fastidioso anche quand
 
 Nei test misuro quindi anche: falsi positivi (proposte su note che non ne richiedevano), proposte ogni 10 note, percentuale di proposte accettate, modificate e rifiutate e, nel test con utenti, quanto le persone le hanno trovate fastidiose.
 
-## Le fasi
+## Le fasi future
 
 ### Fase 1 — Chiudere UC-01 dal lato del modello [essenziale]
 *30 novembre – 13 dicembre*
