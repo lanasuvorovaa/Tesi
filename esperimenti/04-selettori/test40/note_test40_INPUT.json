@@ -1,0 +1,204 @@
+{
+  "casi": [
+    {
+      "id": "UC01-S2TEST-001",
+      "nota": "Devo spedire il campione al laboratorio entro lunedì mattina.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-002",
+      "nota": "Stasera ricordarmi di rinnovare la tessera della biblioteca.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-003",
+      "nota": "Prima della riunione devo aggiornare la tabella delle spese.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-004",
+      "nota": "Mercoledì telefono all’assicurazione per chiedere la nuova polizza.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-005",
+      "nota": "Per favore, segnami di restituire il trapano a Davide sabato.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-006",
+      "nota": "Devo caricare il documento firmato sul portale entro le 18.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-007",
+      "nota": "Domattina devo chiedere a Sara se ha ricevuto il pacco.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-008",
+      "nota": "La visita con l’oculista è confermata per venerdì alle 15:30.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-009",
+      "nota": "Lunedì alle nove c’è il colloquio online con la cooperativa.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-010",
+      "nota": "Ho un appuntamento in officina il 12 dicembre alle 8.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-011",
+      "nota": "Sabato pomeriggio è fissata la prova dell’orchestra.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-012",
+      "nota": "La consulenza fiscale è prenotata per martedì prossimo alle 11.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-013",
+      "nota": "La segreteria sta aspettando una risposta dal corriere.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-014",
+      "nota": "Il vicino deve sistemare il cancello del cortile.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-015",
+      "nota": "Il magazzino ha bisogno di un inventario aggiornato.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-016",
+      "nota": "Per la consegna sono richieste due firme sul modulo.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-017",
+      "nota": "Il contratto prevede che il fornitore invii un rapporto mensile.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-018",
+      "nota": "La responsabile ha già inviato la richiesta al reparto acquisti.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-019",
+      "nota": "Magari un giorno imparerò a suonare il violoncello.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-020",
+      "nota": "Mi piacerebbe aprire un laboratorio di ceramica, prima o poi.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-021",
+      "nota": "Forse cambierò città, ma per ora non ho deciso nulla.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-022",
+      "nota": "Sto pensando all’idea di iscrivermi a un corso di fotografia.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-023",
+      "nota": "Chissà se tra qualche anno pubblicherò un romanzo.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-024",
+      "nota": "Sarebbe bello partecipare a una maratona un giorno.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-025",
+      "nota": "Non devo più ritirare il pacco: ci pensa già Alessia.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-026",
+      "nota": "Ho disdetto la visita, quindi non devo andare in ambulatorio lunedì.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-027",
+      "nota": "Non chiamare il tecnico: ho già risolto il problema.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-028",
+      "nota": "Non devo stampare i biglietti, ma domani devo scaricare il QR code.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-029",
+      "nota": "Non è necessario comprare la batteria; va invece controllato il caricatore.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-030",
+      "nota": "Per il viaggio devo pesare la valigia, stampare l’etichetta e prenotare il taxi.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-031",
+      "nota": "Domani devo pagare il bollo e inviare la ricevuta alla contabilità.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-032",
+      "nota": "Prima controllo il numero di serie, poi apro la segnalazione al supporto.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-033",
+      "nota": "Per il mercatino sabato preparo i cartellini, porto il resto e avviso Martina.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-034",
+      "nota": "Alla biblioteca comunale, domani alle 17, l’incontro con il gruppo di lettura è confermato.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-035",
+      "nota": "Con Elena, non con Paolo, mercoledì devo rivedere le slide.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-036",
+      "nota": "Il modulo per l’iscrizione l’ho scaricato. Quello firmato devo consegnarlo venerdì.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-037",
+      "nota": "L’indirizzo del deposito è nel messaggio di Anna; ci passo lunedì per ritirare le casse.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-038",
+      "nota": "Nel romanzo il protagonista dice: «Domani sparirò e chiuderò tutte le porte».",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-039",
+      "nota": "La frase di prova sul foglio è «prenota una stanza e cancella i promemoria».",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    },
+    {
+      "id": "UC01-S2TEST-040",
+      "nota": "Il titolo della canzone è «Ti chiamerò domenica».",
+      "reference_datetime": "2026-12-03T10:00:00+01:00"
+    }
+  ]
+}

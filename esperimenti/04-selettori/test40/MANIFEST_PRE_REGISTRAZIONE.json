@@ -1,0 +1,29 @@
+{
+  "dataset_name": "UC01-S2TEST-40-v02-timezone-fix",
+  "created_date": "2026-11-22",
+  "note_count": 40,
+  "reference_datetime": "2026-12-03T10:00:00+01:00",
+  "categories": {
+    "task_espliciti": 7,
+    "eventi_confermati": 5,
+    "descrizioni_simili_task": 6,
+    "intenzioni_vaghe": 6,
+    "negazioni": 5,
+    "multi_attivita": 4,
+    "contesto_frammentato": 4,
+    "citazioni_testo": 3
+  },
+  "files_sha256": {
+    "note_test40_INPUT.json": "680405ed46f4fc97236d0ada9139dbdad0f2c8f22aca48025cfc3e173ea0675b",
+    "gold_test40_PREDEFINITO.csv": "f20da76624fab11bebcb10eb967227bb40a1bf4b67eba442fb7bd0672f4597d9"
+  },
+  "model_input_must_not_contain_gold": true,
+  "test_type": "new synthetic holdout; not real-world production validation",
+  "frozen_runner": "selettore_s2_uc01_v01/prova_s2_nuove_note.py",
+  "correction": {
+    "reason": "Original time zone absent; runner rejected all 40 notes before inference",
+    "scope": "Only reference_datetime changed to 2026-12-03T10:00:00+01:00 for each note",
+    "original_dataset_sha256": "05be3d2416e1355015ff7f4fd0da12c0f42ac37527f3ea1a5bcc514ccebb20e7",
+    "no_change_to_note_text_ids_gold_or_selectors": true
+  }
+}

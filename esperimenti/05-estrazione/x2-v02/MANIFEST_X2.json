@@ -1,0 +1,13 @@
+{
+  "protocol": "UC-01-X2-diagnostic-v02",
+  "change": "Model outputs quotes without spans; Python exact unique-match alignment",
+  "source_set": "known synthetic development notes, not independent holdout",
+  "files_sha256": {
+    "prompt_X2.txt": "bfeaa2481784c066c7daf1b5519eecd17b628bdaf5b8cd06ecc9e4366a1fee81",
+    "x2_core.py": "0acb55b5521ff48be857977f76e39b0890147e01a922b9152fef079366e009c2",
+    "prova_x0_x1_x2.py": "f0e66070b36b913914509cda5e1fb60d138e390185bc36f7eae3d2686110dc20",
+    "schema_x2_v02.json": "d9db525a836e7d1ddf536c8be6800fc9fdbb48136d472c25d8b133881d92d9e7",
+    "note_test40_DIAGNOSTICO.json": "680405ed46f4fc97236d0ada9139dbdad0f2c8f22aca48025cfc3e173ea0675b"
+  },
+  "old_x2_v01_replay": "44/66 actions accepted offline under strict validators; not inference or accuracy"
+}

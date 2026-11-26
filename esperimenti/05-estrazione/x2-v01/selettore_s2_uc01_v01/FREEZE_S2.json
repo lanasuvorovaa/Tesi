@@ -1,0 +1,26 @@
+{
+  "study": "UC-01 S1 vs S2-V vs S2-R vs S2-VR",
+  "sha256": {
+    "selettore_s1.py": "a4368fcdb2576c30bd258e1708322b8c4f849547781b40363ab4824d6160bab5",
+    "selettore_s2.py": "01c869a85a86af8cd5a512f2c5f0b8dac7dbc4152491dacadffd4d184f50b71e",
+    "prova_c2.py": "8a3720f74ba0cb8c05abd054253ccff1225075362ff3511372f294281ca676ff",
+    "prompt_C2.txt": "b25b6082cec2b83bf0e5a9f0d32417b31296c2e8800692714780f92172ef35f4",
+    "runtime_support.py": "1f3326da26535af90d95b8a380b4ab306562b6cb0c8acbfed20240adda46614c",
+    "pipeline_demo/demo_core.py": "7b57cf9bab1df3be4e77d2fcf55263cd22bf2e72893f116d160ef4de96af7f61",
+    "pipeline_demo/frozen/selector/replay_24.py": "6cbb4160ba6d19512720c9ddccd760a9101754866597108c2aab4f1b8448dfcc",
+    "pipeline_demo/frozen/selector/frozen_selector.py": "bbe27a55aeaa219aa8c92627f7e968af926e0dd858fcf2a38487fff05e458913",
+    "pipeline_demo/frozen/xc_z/semantic_core_v6.py": "0027bbf9d118e15493f1d00aeecaf26194ce08e1c8e952073521a2a86dc473fa",
+    "pipeline_demo/frozen/xc_z/experiment_controls.py": "998ef6ff57f22f1c44e6f976e2178b093cc13aaf8a78fd3188dc2c316408f561",
+    "pipeline_demo/frozen/xc_z/run_pipeline_bc.py": "eb3decb2f863e4654e6ccc9b273f5157fc01b302dcd6604e410d01580268ac46",
+    "pipeline_demo/frozen/xc_z/constrained_api.py": "4ded6ecdbb48a5fea8d9b7a011c59c9d5c4824b48c3e18ac10cd155d30c0185e"
+  },
+  "prompt_C2_runtime_sha256": "289a00ac6237e5adbdb44660e02e9f820e92774f0511f4f22b824ca21100534a",
+  "model_sha256": "d2387ca2dbfee2ffabce7120d3770dadca0b293052bc2f0e138fdc940d9bc7b5",
+  "runtime_sha256": "1fb08810486a5cb2b50b6f2524ea102ab66de360acd115890c4aa15debf4aca7",
+  "diagnostic_data": {
+    "diagnostica_development24.csv": "c915aee6bc2829bca00ce7ec02a93c7b1f173aa456298bb479bb01fe50588118",
+    "diagnostica_holdout32_note.csv": "36fd82ad309369d053777f34e0ae2b41fe51f9ec3d2f317e1e503ff1b0d3387a",
+    "diagnostica_holdout32_frammenti.csv": "b755e5208f1025704eb414401fce3b162c954808869f1afa3be9a3fc7a806efd",
+    "development24.json": "4724c163e7357246b1ae52a1e17a575d293e2cf9bf438a3ef394c2b2512e5543"
+  }
+}

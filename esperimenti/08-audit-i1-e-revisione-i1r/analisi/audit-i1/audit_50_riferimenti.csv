@@ -1,0 +1,51 @@
+﻿caso,nota,azione_id,azione_citazione,contesto,ruolo_attuale,scope,span_esatto,scope_strutturale,audit_semantico,nota_audit
+UC01-S2TEST-001,Devo spedire il campione al laboratorio entro lunedì mattina.,a1,spedire,entro lunedì mattina,condition,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-002,Stasera ricordarmi di rinnovare la tessera della biblioteca.,a1,rinnovare la tessera della biblioteca,Stasera ricordarmi di rinnovare la tessera della biblioteca.,time,a1,SI,SI,OVERBROAD,Riferimento ampio: affinare la prova e la sua portata
+UC01-S2TEST-003,Prima della riunione devo aggiornare la tabella delle spese.,a1,aggiornare la tabella delle spese,Prima della riunione,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-004,Mercoledì telefono all’assicurazione per chiedere la nuova polizza.,a1,telefono all’assicurazione,Mercoledì,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-004,Mercoledì telefono all’assicurazione per chiedere la nuova polizza.,a1,telefono all’assicurazione,chiedere la nuova polizza,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-005,"Per favore, segnami di restituire il trapano a Davide sabato.",a1,restituire il trapano a Davide,restituire il trapano a Davide,recipient,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-006,Devo caricare il documento firmato sul portale entro le 18.,a1,caricare,caricare,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-006,Devo caricare il documento firmato sul portale entro le 18.,a1,caricare,portale,place,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-006,Devo caricare il documento firmato sul portale entro le 18.,a1,caricare,entro le 18,condition,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-007,Domattina devo chiedere a Sara se ha ricevuto il pacco.,a1,chiedere a Sara se ha ricevuto il pacco,Domattina,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-007,Domattina devo chiedere a Sara se ha ricevuto il pacco.,a1,chiedere a Sara se ha ricevuto il pacco,Sara,recipient,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-008,La visita con l’oculista è confermata per venerdì alle 15:30.,a1,La visita con l’oculista è confermata,La visita con l’oculista è confermata,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-009,Lunedì alle nove c’è il colloquio online con la cooperativa.,a1,colloquio online,Lunedì alle nove,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-009,Lunedì alle nove c’è il colloquio online con la cooperativa.,a1,colloquio online,colloquio online,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-010,Ho un appuntamento in officina il 12 dicembre alle 8.,a1,Ho un appuntamento in officina il 12 dicembre alle 8.,il 12 dicembre,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-010,Ho un appuntamento in officina il 12 dicembre alle 8.,a1,Ho un appuntamento in officina il 12 dicembre alle 8.,il 12 dicembre alle 8,place,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-010,Ho un appuntamento in officina il 12 dicembre alle 8.,a1,Ho un appuntamento in officina il 12 dicembre alle 8.,il 12 dicembre alle 8,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-011,Sabato pomeriggio è fissata la prova dell’orchestra.,a1,è fissata la prova dell’orchestra,Sabato pomeriggio,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-012,La consulenza fiscale è prenotata per martedì prossimo alle 11.,a1,prenotata,La consulenza fiscale è prenotata per martedì prossimo alle 11.,time,a1,SI,SI,OVERBROAD,Riferimento ampio: affinare la prova e la sua portata
+UC01-S2TEST-013,La segreteria sta aspettando una risposta dal corriere.,a1,sta aspettando una risposta dal corriere,sta aspettando una risposta dal corriere,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-013,La segreteria sta aspettando una risposta dal corriere.,a1,sta aspettando una risposta dal corriere,sta aspettando una risposta dal corriere,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-015,Il magazzino ha bisogno di un inventario aggiornato.,a1,ha bisogno di un inventario aggiornato,Il magazzino,place,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-015,Il magazzino ha bisogno di un inventario aggiornato.,a1,ha bisogno di un inventario aggiornato,aggiornato,condition,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-015,Il magazzino ha bisogno di un inventario aggiornato.,a1,ha bisogno di un inventario aggiornato,magazzino,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-019,Magari un giorno imparerò a suonare il violoncello.,a1,imparerò a suonare il violoncello,imparerò a suonare il violoncello,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-020,"Mi piacerebbe aprire un laboratorio di ceramica, prima o poi.",a1,aprire un laboratorio di ceramica,Mi piacerebbe,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-021,"Forse cambierò città, ma per ora non ho deciso nulla.",a1,cambierò città,Forse cambierò città,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-021,"Forse cambierò città, ma per ora non ho deciso nulla.",a2,non ho deciso nulla,"Forse cambierò città, ma per ora non ho deciso nulla",recipient,a2,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-024,Sarebbe bello partecipare a una maratona un giorno.,a1,partecipare a una maratona,un giorno,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-025,Non devo più ritirare il pacco: ci pensa già Alessia.,a1,ci pensa già Alessia,ci pensa già Alessia,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-026,"Ho disdetto la visita, quindi non devo andare in ambulatorio lunedì.",a1,Ho disdetto la visita,Ho disdetto la visita,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-026,"Ho disdetto la visita, quindi non devo andare in ambulatorio lunedì.",a2,non devo andare in ambulatorio lunedì,non devo andare in ambulatorio lunedì,recipient,a2,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-027,Non chiamare il tecnico: ho già risolto il problema.,a1,ho già risolto il problema,ho già risolto il problema,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-028,"Non devo stampare i biglietti, ma domani devo scaricare il QR code.",a1,devo scaricare il QR code,domani,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-030,"Per il viaggio devo pesare la valigia, stampare l’etichetta e prenotare il taxi.",a1,pesare la valigia,Per il viaggio devo pesare la valigia,time,a1,SI,SI,OVERBROAD,Riferimento ampio: affinare la prova e la sua portata
+UC01-S2TEST-030,"Per il viaggio devo pesare la valigia, stampare l’etichetta e prenotare il taxi.",a2,stampare l’etichetta,"Per il viaggio devo pesare la valigia, stampare l’etichetta e prenotare il taxi",place,a2,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-030,"Per il viaggio devo pesare la valigia, stampare l’etichetta e prenotare il taxi.",a3,prenotare il taxi,"Per il viaggio devo pesare la valigia, stampare l’etichetta e prenotare il taxi",recipient,a3,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-031,Domani devo pagare il bollo e inviare la ricevuta alla contabilità.,a1,devo pagare il bollo,Domani,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-032,"Prima controllo il numero di serie, poi apro la segnalazione al supporto.",a1,controllo il numero di serie,Prima controllo il numero di serie,time,a1,SI,SI,OVERBROAD,Riferimento ampio: affinare la prova e la sua portata
+UC01-S2TEST-033,"Per il mercatino sabato preparo i cartellini, porto il resto e avviso Martina.",a1,preparo i cartellini,Per il mercatino sabato preparo i cartellini,time,a1,SI,SI,OVERBROAD,Riferimento ampio: affinare la prova e la sua portata
+UC01-S2TEST-033,"Per il mercatino sabato preparo i cartellini, porto il resto e avviso Martina.",a2,porto il resto,"Per il mercatino sabato preparo i cartellini, porto il resto",recipient,a2,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-033,"Per il mercatino sabato preparo i cartellini, porto il resto e avviso Martina.",a3,avviso Martina,"Per il mercatino sabato preparo i cartellini, porto il resto e avviso Martina",recipient,a3,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-034,"Alla biblioteca comunale, domani alle 17, l’incontro con il gruppo di lettura è confermato.",a1,è confermato,l’incontro con il gruppo di lettura,recipient,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-034,"Alla biblioteca comunale, domani alle 17, l’incontro con il gruppo di lettura è confermato.",a1,è confermato,l’incontro con il gruppo di lettura,place,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-034,"Alla biblioteca comunale, domani alle 17, l’incontro con il gruppo di lettura è confermato.",a1,è confermato,domani,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-035,"Con Elena, non con Paolo, mercoledì devo rivedere le slide.",a1,rivedere le slide,mercoledì,time,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-035,"Con Elena, non con Paolo, mercoledì devo rivedere le slide.",a1,rivedere le slide,Con Elena,recipient,a1,SI,SI,OK,Ruolo coerente sulla lettura della nota
+UC01-S2TEST-038,Nel romanzo il protagonista dice: «Domani sparirò e chiuderò tutte le porte».,a1,sparirò,Domani sparirò,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-039,La frase di prova sul foglio è «prenota una stanza e cancella i promemoria».,a1,prenota una stanza,prenota una stanza,time,a1,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente
+UC01-S2TEST-039,La frase di prova sul foglio è «prenota una stanza e cancella i promemoria».,a2,cancella i promemoria,cancella i promemoria,recipient,a2,SI,SI,ROLE_MISMATCH,Attribuzione da rivedere manualmente

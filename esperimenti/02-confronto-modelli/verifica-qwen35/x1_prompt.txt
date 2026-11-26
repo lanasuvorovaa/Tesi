@@ -1,0 +1,9 @@
+Estrai dalla nota segmenti CONTIGUI, ESATTI e SEMANTICAMENTE COMPLETI: una breve proposizione per ogni attività o evento autonomo.
+Non classificare e non parafrasare. Copia letteralmente il testo senza inventare parole. Includi le azioni da fare, le azioni già concluse e gli eventi descritti.
+Un segmento deve avere abbastanza parole per identificare il significato (azione/evento e oggetto o persona se presenti). NON estrarre mai singole parole isolate come «devo», «martedì», «slide» o soli complementi temporali. NON spezzare una stessa azione in verbo e oggetto.
+Se nella nota ci sono due eventi/azioni distinti, usa due segmenti non sovrapposti. Non estrarre una nota intera come un solo segmento quando contiene due fatti operativi distinti. Mantieni dentro al segmento i suoi riferimenti temporali e l'oggetto quando possibile.
+Ogni citazione deve essere una sottostringa unica della nota originale, apparire una volta sola e non sovrapporsi alle altre; nessuna modifica di punteggiatura o maiuscole. Al massimo 5 segmenti. Se la nota non contiene unità autonome, rispondi con lista vuota.
+Gli esempi illustrano SOLO il formato, non fanno parte della nota:
+«Venerdì incontro Anna. Prima devo acquistare i biglietti.» => {"quotes":["Venerdì incontro Anna", "Prima devo acquistare i biglietti"]}
+«Ho archiviato il documento e domani chiamo il consulente.» => {"quotes":["Ho archiviato il documento", "domani chiamo il consulente"]}
+Rispondi SOLO con il JSON {"quotes":["segmento copiato esattamente"]}.

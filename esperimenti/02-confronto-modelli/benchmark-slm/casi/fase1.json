@@ -1,0 +1,75 @@
+{
+  "descrizione": "6 parafrasi note + 4 casi sviluppo diagnostici; dataset con esempi gia usati",
+  "casi": [
+    {
+      "id": "RIUNIONE-00",
+      "nota": "La riunione con Chiara è fissata alle 9 di martedì; le slide devono essere pronte prima.",
+      "origine": "parafrasi_nota_riunione",
+      "reference_datetime": "2026-11-18T10:00:00+01:00",
+      "gruppo": "Parafrasi riunione"
+    },
+    {
+      "id": "RIUNIONE-01",
+      "nota": "Martedì alle 9 ho una riunione con Chiara e devo preparare le slide prima.",
+      "origine": "parafrasi_nota_riunione",
+      "reference_datetime": "2026-11-18T10:00:00+01:00",
+      "gruppo": "Parafrasi riunione"
+    },
+    {
+      "id": "RIUNIONE-02",
+      "nota": "Devo finire le slide prima della riunione con Chiara, prevista per martedì alle 9.",
+      "origine": "parafrasi_nota_riunione",
+      "reference_datetime": "2026-11-18T10:00:00+01:00",
+      "gruppo": "Parafrasi riunione"
+    },
+    {
+      "id": "RIUNIONE-03",
+      "nota": "Per martedì alle 9 è fissata la riunione con Chiara. Le slide vanno preparate prima.",
+      "origine": "parafrasi_nota_riunione",
+      "reference_datetime": "2026-11-18T10:00:00+01:00",
+      "gruppo": "Parafrasi riunione"
+    },
+    {
+      "id": "RIUNIONE-04",
+      "nota": "Martedì alle 9 vedrò Chiara in riunione. Prima devo completare le slide.",
+      "origine": "parafrasi_nota_riunione",
+      "reference_datetime": "2026-11-18T10:00:00+01:00",
+      "gruppo": "Parafrasi riunione"
+    },
+    {
+      "id": "RIUNIONE-05",
+      "nota": "La riunione con Chiara sarà martedì alle 9; prima di allora devo avere le slide pronte.",
+      "origine": "parafrasi_nota_riunione",
+      "reference_datetime": "2026-11-18T10:00:00+01:00",
+      "gruppo": "Parafrasi riunione"
+    },
+    {
+      "id": "UC01-MAIN-019",
+      "nota": "Ieri ho restituito le chiavi. Domani devo prenotare il furgone.",
+      "origine": "development_24_frozen",
+      "reference_datetime": "2026-10-12T10:00:00+02:00",
+      "gruppo": "Development UC-01"
+    },
+    {
+      "id": "UC01-MAIN-022",
+      "nota": "Ho salvato questa strofa inventata: «Domani cancello ogni appuntamento, poi chiamo Marco».",
+      "origine": "development_24_frozen",
+      "reference_datetime": "2026-10-12T10:00:00+02:00",
+      "gruppo": "Development UC-01"
+    },
+    {
+      "id": "UC01-MAIN-052",
+      "nota": "Ricordarmi la visita di controllo il prossimo fine settimana.",
+      "origine": "development_24_frozen",
+      "reference_datetime": "2026-10-12T10:00:00+02:00",
+      "gruppo": "Development UC-01"
+    },
+    {
+      "id": "UC01-MAIN-060",
+      "nota": "Non devo più chiamare il fornitore; devo invece scrivergli una mail.",
+      "origine": "development_24_frozen",
+      "reference_datetime": "2026-10-12T10:00:00+02:00",
+      "gruppo": "Development UC-01"
+    }
+  ]
+}

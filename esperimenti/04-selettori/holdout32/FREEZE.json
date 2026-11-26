@@ -1,0 +1,35 @@
+{
+  "baseline": "X0+C0+Z+S0",
+  "candidate": "X0+C2+Z+S1",
+  "freeze_date": "2026-11-20",
+  "file_hashes_sha256": {
+    "prompt_C2.txt": "b25b6082cec2b83bf0e5a9f0d32417b31296c2e8800692714780f92172ef35f4",
+    "selettore_s1.py": "a4368fcdb2576c30bd258e1708322b8c4f849547781b40363ab4824d6160bab5",
+    "prova_c2.py": "8a3720f74ba0cb8c05abd054253ccff1225075362ff3511372f294281ca676ff",
+    "runtime_support.py": "1f3326da26535af90d95b8a380b4ab306562b6cb0c8acbfed20240adda46614c",
+    "pipeline_demo/demo_core.py": "7b57cf9bab1df3be4e77d2fcf55263cd22bf2e72893f116d160ef4de96af7f61",
+    "pipeline_demo/frozen/selector/frozen_selector.py": "bbe27a55aeaa219aa8c92627f7e968af926e0dd858fcf2a38487fff05e458913",
+    "pipeline_demo/frozen/selector/replay_24.py": "6cbb4160ba6d19512720c9ddccd760a9101754866597108c2aab4f1b8448dfcc",
+    "pipeline_demo/frozen/xc_z/experiment_controls.py": "998ef6ff57f22f1c44e6f976e2178b093cc13aaf8a78fd3188dc2c316408f561",
+    "pipeline_demo/frozen/xc_z/run_pipeline_bc.py": "eb3decb2f863e4654e6ccc9b273f5157fc01b302dcd6604e410d01580268ac46",
+    "pipeline_demo/frozen/xc_z/semantic_core_v6.py": "0027bbf9d118e15493f1d00aeecaf26194ce08e1c8e952073521a2a86dc473fa",
+    "pipeline_demo/frozen/xc_z/constrained_api.py": "4ded6ecdbb48a5fea8d9b7a011c59c9d5c4824b48c3e18ac10cd155d30c0185e",
+    "pipeline_demo/frozen/xc_z/run_notes.py": "c0e5a19f2bd57c684aa827e4f4c9a9dc8c94990f7acc6ea5a2d773eb13437c90",
+    "pipeline_demo/frozen/xc_z/schemas/uc01-gold.schema.json": "61069b54b6024f9a98f723b52ebf516eb09fd933d968659403e09d78fef9be4c",
+    "pipeline_demo/frozen/xc_z/data/capability_registry.json": "03eb8c2fcd5e6490a031adc98adce1106d5c6ca4196f0ffc81844c6ebaec8753"
+  },
+  "prompt_C2_runtime_sha256": "289a00ac6237e5adbdb44660e02e9f820e92774f0511f4f22b824ca21100534a",
+  "holdout_sha256": "73200a3869504b1cb6b4d33b7cc731dc8d947ad05bf71c35aff1b1fb7aac56f1",
+  "model_sha256": "d2387ca2dbfee2ffabce7120d3770dadca0b293052bc2f0e138fdc940d9bc7b5",
+  "runtime_sha256": "1fb08810486a5cb2b50b6f2524ea102ab66de360acd115890c4aa15debf4aca7",
+  "inference": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 350,
+    "context": 4096,
+    "ngl": 0,
+    "threads": 6
+  },
+  "development_dataset_sha256": "4724c163e7357246b1ae52a1e17a575d293e2cf9bf438a3ef394c2b2512e5543",
+  "gold_not_read_by_runner": true
+}

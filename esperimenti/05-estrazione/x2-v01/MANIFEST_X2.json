@@ -1,0 +1,11 @@
+{
+  "protocol": "UC-01-X2-diagnostic-v01",
+  "source_set": "known synthetic development notes; not independent holdout",
+  "files_sha256": {
+    "prompt_X2.txt": "a174e9096f49f15447a3baee4da71fe2a46997089e6e622344a9d64de1b6566b",
+    "x2_core.py": "152e10682e60c12e0136c1516e76e11ee50d5a4ebf05fde6dfe2e5712de5e454",
+    "prova_x0_x1_x2.py": "ad5bf1e09a939465ee8eae7c8cb08d30e80f0624559221db424cf50f5483ad8b",
+    "schema_x2_v01.json": "abd734d1f3594355bd01e155980b6a4f490f8917ee8e9b674465791f7d946820",
+    "note_test40_DIAGNOSTICO.json": "680405ed46f4fc97236d0ada9139dbdad0f2c8f22aca48025cfc3e173ea0675b"
+  }
+}

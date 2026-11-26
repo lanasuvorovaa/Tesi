@@ -1,0 +1,197 @@
+{
+  "schema_version": "I1-v0.1",
+  "notes": [
+    {
+      "note_id": "UC01-S2TEST-028",
+      "text": "Non devo stampare i biglietti, ma domani devo scaricare il QR code.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00",
+      "actions": [
+        {
+          "id": "a1",
+          "action_evidence": {
+            "quote": "stampare i biglietti",
+            "span": [
+              9,
+              29
+            ]
+          },
+          "context_refs": [
+            {
+              "quote": "Non",
+              "span": [
+                0,
+                3
+              ],
+              "role": "polarity",
+              "scope": [
+                "a1"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            }
+          ],
+          "interpretation": null,
+          "provenance": {
+            "extractor": "example_manual_not_model",
+            "version": "I1-v0.1"
+          }
+        },
+        {
+          "id": "a2",
+          "action_evidence": {
+            "quote": "scaricare il QR code",
+            "span": [
+              46,
+              66
+            ]
+          },
+          "context_refs": [
+            {
+              "quote": "domani",
+              "span": [
+                34,
+                40
+              ],
+              "role": "time",
+              "scope": [
+                "a2"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            },
+            {
+              "quote": "devo",
+              "span": [
+                41,
+                45
+              ],
+              "role": "modality",
+              "scope": [
+                "a2"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            }
+          ],
+          "interpretation": null,
+          "provenance": {
+            "extractor": "example_manual_not_model",
+            "version": "I1-v0.1"
+          }
+        }
+      ],
+      "relations": [
+        {
+          "source_action_id": "a1",
+          "target_action_id": "a2",
+          "type": "contrasts_with",
+          "evidence": {
+            "quote": "ma",
+            "span": [
+              31,
+              33
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "note_id": "UC01-S2TEST-031",
+      "text": "Domani devo pagare il bollo e inviare la ricevuta alla contabilità.",
+      "reference_datetime": "2026-12-03T10:00:00+01:00",
+      "actions": [
+        {
+          "id": "a1",
+          "action_evidence": {
+            "quote": "pagare il bollo",
+            "span": [
+              12,
+              27
+            ]
+          },
+          "context_refs": [
+            {
+              "quote": "Domani",
+              "span": [
+                0,
+                6
+              ],
+              "role": "time",
+              "scope": [
+                "a1",
+                "a2"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            },
+            {
+              "quote": "devo",
+              "span": [
+                7,
+                11
+              ],
+              "role": "modality",
+              "scope": [
+                "a1",
+                "a2"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            }
+          ],
+          "interpretation": null,
+          "provenance": {
+            "extractor": "example_manual_not_model",
+            "version": "I1-v0.1"
+          }
+        },
+        {
+          "id": "a2",
+          "action_evidence": {
+            "quote": "inviare la ricevuta alla contabilità",
+            "span": [
+              30,
+              66
+            ]
+          },
+          "context_refs": [
+            {
+              "quote": "Domani",
+              "span": [
+                0,
+                6
+              ],
+              "role": "time",
+              "scope": [
+                "a1",
+                "a2"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            },
+            {
+              "quote": "devo",
+              "span": [
+                7,
+                11
+              ],
+              "role": "modality",
+              "scope": [
+                "a1",
+                "a2"
+              ],
+              "source": "explicit_text",
+              "confidence_policy": "verified"
+            }
+          ],
+          "interpretation": null,
+          "provenance": {
+            "extractor": "example_manual_not_model",
+            "version": "I1-v0.1"
+          }
+        }
+      ],
+      "relations": []
+    }
+  ]
+}

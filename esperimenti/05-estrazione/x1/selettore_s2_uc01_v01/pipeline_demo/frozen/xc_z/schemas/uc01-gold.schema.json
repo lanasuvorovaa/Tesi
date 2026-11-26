@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/benchmark/uc01-gold.schema.json",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": "uc01.v1"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "TASK",
+              "EVENT",
+              "FACT"
+            ]
+          },
+          "canonical_text": {
+            "type": "string"
+          },
+          "intent_status": {
+            "type": "string",
+            "enum": [
+              "COMMITTED",
+              "TENTATIVE",
+              "HYPOTHETICAL",
+              "NEGATED",
+              "COMPLETED",
+              "INFORMATIONAL"
+            ]
+          },
+          "arguments": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "temporal": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "DEADLINE",
+                    "PLANNED_DATE",
+                    "EVENT_START",
+                    "EVENT_END",
+                    "REMINDER",
+                    "BEFORE",
+                    "AFTER"
+                  ]
+                },
+                "expression": {
+                  "type": "string"
+                },
+                "value": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "const": "DATE"
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "date"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "const": "DATETIME"
+                        },
+                        "datetime": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "datetime"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "const": "INTERVAL"
+                        },
+                        "start": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "end": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "start",
+                        "end"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "const": "UNRESOLVED"
+                        },
+                        "reason": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "reason"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "precision": {
+                  "type": "string",
+                  "enum": [
+                    "DAY",
+                    "MINUTE",
+                    "INTERVAL",
+                    "UNKNOWN"
+                  ]
+                },
+                "certainty": {
+                  "type": "string",
+                  "enum": [
+                    "EXPLICIT",
+                    "INFERRED",
+                    "AMBIGUOUS"
+                  ]
+                }
+              },
+              "required": [
+                "role",
+                "expression",
+                "value",
+                "precision",
+                "certainty"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proposal_policy": {
+            "type": "string",
+            "enum": [
+              "PROPOSE",
+              "CLARIFY",
+              "SUPPRESS"
+            ]
+          }
+        },
+        "required": [
+          "candidate_id",
+          "kind",
+          "canonical_text",
+          "intent_status",
+          "arguments",
+          "temporal",
+          "evidence_ids",
+          "proposal_policy"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "candidate_relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "relation_id": {
+            "type": "string"
+          },
+          "source_candidate_id": {
+            "type": "string"
+          },
+          "relation_type": {
+            "type": "string",
+            "enum": [
+              "MUST_PRECEDE",
+              "DEPENDS_ON",
+              "RELATED_TO"
+            ]
+          },
+          "target_candidate_id": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "relation_id",
+          "source_candidate_id",
+          "relation_type",
+          "target_candidate_id",
+          "evidence_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "source_item_id": {
+            "type": "string"
+          },
+          "source_revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "quote": {
+            "type": "string"
+          },
+          "span": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "unit": {
+                "type": "string",
+                "enum": [
+                  "UNICODE_CODEPOINT"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "unit"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "evidence_id",
+          "source_item_id",
+          "source_revision",
+          "quote",
+          "span"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "unresolved_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "AMBIGUOUS_REFERENCE",
+              "MISSING_INFORMATION",
+              "AMBIGUOUS_TIME",
+              "UNCERTAIN_INTENT"
+            ]
+          },
+          "source_text": {
+            "type": "string"
+          },
+          "possible_values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "candidate_id",
+          "field",
+          "reason",
+          "source_text",
+          "possible_values"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract_version",
+    "candidates",
+    "candidate_relations",
+    "evidence",
+    "unresolved_references"
+  ],
+  "additionalProperties": false
+}

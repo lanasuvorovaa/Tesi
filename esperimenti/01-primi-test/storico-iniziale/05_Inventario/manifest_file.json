@@ -1,0 +1,77 @@
+{
+  "generated_on": "2026-11-20",
+  "recovered_original_files": 14,
+  "files": [
+    {
+      "path": "00_INIZIA_DA_QUI/LEGGIMI_PRIMA.md",
+      "size_bytes": 963,
+      "sha256": "2e3921cb9058064b753a1ef438898c6a582dff58cc0b487aff04e6681a38c017"
+    },
+    {
+      "path": "01_Contesto_e_decisioni/PROJECT_STATE.md",
+      "size_bytes": 4935,
+      "sha256": "37e5796908b39c965946053705b670b5880912e8a4910babb3a026313149f255"
+    },
+    {
+      "path": "01_Contesto_e_decisioni/REGISTRO_DECISIONI.md",
+      "size_bytes": 877,
+      "sha256": "1f39df238f88e96b0cf76fe37f2af5cb899d2c1ae84762bb2b0317b9cc606734"
+    },
+    {
+      "path": "01_Contesto_e_decisioni/ROADMAP_PROSSIMI_PASSI.md",
+      "size_bytes": 2188,
+      "sha256": "318fa58b93513c5b1c0f0ddcc9759a7edc8d9dbb202be640f05fcf312f51dc58"
+    },
+    {
+      "path": "02_Esperimenti_e_risultati/02_confronto_iniziale_report.md",
+      "size_bytes": 5377,
+      "sha256": "90797ba051366af16b40ea2a8b07dae8675245220cc5a09d408023b4583d620f"
+    },
+    {
+      "path": "02_Esperimenti_e_risultati/03_diagnostico_X_e_C_report.md",
+      "size_bytes": 3924,
+      "sha256": "5785bd056bd1bd092829e832f48b7176f16d27c1e9e9d5756bb4efd229116507"
+    },
+    {
+      "path": "02_Esperimenti_e_risultati/04_confronto_24_note_report.md",
+      "size_bytes": 11338,
+      "sha256": "8ef4640fa3544473f6d49f90d2c969bdc6b77c51611a6971036852127ac62e52"
+    },
+    {
+      "path": "02_Esperimenti_e_risultati/05_C0_contro_C1_report_ULTIMO.md",
+      "size_bytes": 11899,
+      "sha256": "1d3760c5479ec92fcac672fa46b8af37657d837b4b9f296273107368bb219cce"
+    },
+    {
+      "path": "04_Dati_CSV/01_confronto_10_casi.csv",
+      "size_bytes": 13153,
+      "sha256": "0176784376f685ce7abd8f14417ee87797e2d4aabb98208508417e0c62f830af"
+    },
+    {
+      "path": "04_Dati_CSV/02_lfm_classificazione.csv",
+      "size_bytes": 1725,
+      "sha256": "1dfbf17e6b7783c0f705c3d974fba7b6a3b2c6882ab18940364ff12349f0632f"
+    },
+    {
+      "path": "04_Dati_CSV/03_qwen_estrazione.csv",
+      "size_bytes": 3073,
+      "sha256": "e213c0206d7d12e1293162c93ee933f45d5a1f9f23fc61c6d272cce42fcbcdff"
+    },
+    {
+      "path": "04_Dati_CSV/04_confronto_24_note.csv",
+      "size_bytes": 16017,
+      "sha256": "c5709fa44ec027c57495213185155734ee83840ac7afd3b0d64fc4969bfb2eae"
+    },
+    {
+      "path": "04_Dati_CSV/05_C0_C1_confronto_frammenti.csv",
+      "size_bytes": 8446,
+      "sha256": "ebb218a6d7e4959556b06b7d92e6b9e8db25c8338477ffb15fc29b5747a68f52"
+    },
+    {
+      "path": "04_Dati_CSV/06_C0_C1_confronto_note.csv",
+      "size_bytes": 8296,
+      "sha256": "f487451d82030823612ba320a11afa6dbda62ba987d965b7fcb7bc605c8627b3"
+    }
+  ],
+  "note": "Inventario aggiornato dei materiali conservati nella cartella storica; alcune guide sono state adattate per la consultazione del repository."
+}

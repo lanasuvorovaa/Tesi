@@ -1,0 +1,24 @@
+{
+  "source": "x0_x1_x2_20261124_231726.zip",
+  "mode": "offline_v01_raw_to_v02_alignment; NO MODEL INFERENCE",
+  "notes": 40,
+  "actions_raw": 66,
+  "actions_with_unique_literal_quote": 61,
+  "accepted_actions_strict_v02": 44,
+  "rejected_actions": 22,
+  "error_counts": {
+    "action[0]:RELATION[0]_SELF_REFERENCE": 6,
+    "action[1]:ACTION_QUOTE_NOT_FOUND": 3,
+    "OUTPUT_NOT_OBJECT": 2,
+    "a1:RELATION_TARGET_INVALID": 1,
+    "a2:RELATION_TARGET_INVALID": 1,
+    "action[1]:DUPLICATE_ACTION_SPAN": 2,
+    "action[0]:ACTION_QUOTE_NOT_FOUND": 2,
+    "action[0]:CONTEXT[2]_QUOTE_NOT_FOUND": 1,
+    "action[1]:CONTEXT[0]_QUOTE_NOT_FOUND": 2,
+    "action[2]:CONTEXT[0]_QUOTE_NOT_FOUND": 1,
+    "action[1]:RELATION[0]_SELF_REFERENCE": 2,
+    "action[0]:CONTEXT[0]_QUOTE_NOT_FOUND": 1
+  },
+  "note": "Old v01 output retains self-referential relations and hallucinated/misassigned context; this does not predict v02 inference performance."
+}

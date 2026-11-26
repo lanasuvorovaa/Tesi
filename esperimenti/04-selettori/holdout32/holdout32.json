@@ -1,0 +1,229 @@
+{
+  "descrizione": "32 note NUOVE sintetiche; non sono le 24 development; le aspettative sono archiviate a parte e mai passate al modello",
+  "casi": [
+    {
+      "id": "UC01-HOLD-001",
+      "nota": "Devo inviare le foto del sopralluogo a Beatrice entro martedì sera.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "azioni"
+    },
+    {
+      "id": "UC01-HOLD-002",
+      "nota": "Prima di uscire devo verificare la pressione degli pneumatici.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "azioni"
+    },
+    {
+      "id": "UC01-HOLD-003",
+      "nota": "Preparare tre copie della presentazione e lasciarle in reception.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "azioni"
+    },
+    {
+      "id": "UC01-HOLD-004",
+      "nota": "Il commercialista aspetta i documenti: gli mando la scansione domattina.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "azioni"
+    },
+    {
+      "id": "UC01-HOLD-005",
+      "nota": "Da fare: aggiornare la password del router entro fine mese.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "azioni"
+    },
+    {
+      "id": "UC01-HOLD-006",
+      "nota": "Ho una lezione di chitarra alle 18:30 del 27 novembre.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "eventi"
+    },
+    {
+      "id": "UC01-HOLD-007",
+      "nota": "Il controllo della caldaia è confermato per lunedì alle undici.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "eventi"
+    },
+    {
+      "id": "UC01-HOLD-008",
+      "nota": "Sabato prossimo incontro il gruppo di lettura alle 10 in biblioteca.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "eventi"
+    },
+    {
+      "id": "UC01-HOLD-009",
+      "nota": "Ci vediamo con Paolo il 2 dicembre alle 15 per discutere la bozza.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "eventi"
+    },
+    {
+      "id": "UC01-HOLD-010",
+      "nota": "Stamattina ho già spedito il pacco e conservato la ricevuta.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "completate"
+    },
+    {
+      "id": "UC01-HOLD-011",
+      "nota": "La revisione del documento l’ho terminata lunedì scorso.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "completate"
+    },
+    {
+      "id": "UC01-HOLD-012",
+      "nota": "Ho prenotato il tavolo ieri e ricevuto la conferma via email.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "completate"
+    },
+    {
+      "id": "UC01-HOLD-013",
+      "nota": "Non serve più avvisare il magazzino: la consegna è stata annullata.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "negative"
+    },
+    {
+      "id": "UC01-HOLD-014",
+      "nota": "Evita di fissare appuntamenti per il pomeriggio del 4 dicembre.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "negative"
+    },
+    {
+      "id": "UC01-HOLD-015",
+      "nota": "Non devo acquistare altri cavi; quelli di scorta bastano.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "negative"
+    },
+    {
+      "id": "UC01-HOLD-016",
+      "nota": "Non chiamerò l’assistenza; invierò invece un ticket oggi pomeriggio.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "negative"
+    },
+    {
+      "id": "UC01-HOLD-017",
+      "nota": "Sul quaderno ho copiato questo verso: «Domani apro le finestre e saluto il mare».",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "citazioni"
+    },
+    {
+      "id": "UC01-HOLD-018",
+      "nota": "Il testo della prova è: «Prenota cinque taxi e manda cento messaggi».",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "citazioni"
+    },
+    {
+      "id": "UC01-HOLD-019",
+      "nota": "Francesca ha scritto: «devo comprare una nuova scrivania». Lo riporto per il verbale.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "citazioni"
+    },
+    {
+      "id": "UC01-HOLD-020",
+      "nota": "Se vincessi un concorso, potrei trasferirmi a Trieste.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "ipotesi"
+    },
+    {
+      "id": "UC01-HOLD-021",
+      "nota": "Forse un giorno aprirò una piccola libreria.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "ipotesi"
+    },
+    {
+      "id": "UC01-HOLD-022",
+      "nota": "Sto pensando se partecipare al seminario, non ho deciso nulla.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "ipotesi"
+    },
+    {
+      "id": "UC01-HOLD-023",
+      "nota": "Potrei vedere Clara oppure Stefano, ma devo capire chi è libero.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "ipotesi"
+    },
+    {
+      "id": "UC01-HOLD-024",
+      "nota": "La sala riunioni al terzo piano ha dodici posti.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "informazioni"
+    },
+    {
+      "id": "UC01-HOLD-025",
+      "nota": "Il nuovo abbonamento include l’assistenza telefonica.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "informazioni"
+    },
+    {
+      "id": "UC01-HOLD-026",
+      "nota": "La stampante segnala toner quasi esaurito.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "informazioni"
+    },
+    {
+      "id": "UC01-HOLD-027",
+      "nota": "Entro giovedì devo pagare la quota e poi inoltrare la ricevuta al coordinatore.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "multiple"
+    },
+    {
+      "id": "UC01-HOLD-028",
+      "nota": "Per la mostra: contattare il fotografo, stampare le etichette, controllare le luci.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "multiple"
+    },
+    {
+      "id": "UC01-HOLD-029",
+      "nota": "Oggi ho archiviato i preventivi; domani devo telefonare all’idraulico.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "multiple"
+    },
+    {
+      "id": "UC01-HOLD-030",
+      "nota": "Ricordarmi di consegnare il libro fra un paio di settimane.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "temporali"
+    },
+    {
+      "id": "UC01-HOLD-031",
+      "nota": "La visita di orientamento sarà verso metà dicembre, orario da confermare.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "temporali"
+    },
+    {
+      "id": "UC01-HOLD-032",
+      "nota": "Dovrei fare una telefonata al notaio quando avrò conferma della data.",
+      "reference_datetime": "2026-11-23T10:00:00+01:00",
+      "origine": "holdout_sintetico_v01",
+      "gruppo": "temporali"
+    }
+  ]
+}

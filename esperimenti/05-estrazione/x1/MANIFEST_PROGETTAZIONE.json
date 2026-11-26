@@ -1,0 +1,7 @@
+{
+  "status": "design and local unit tests only; no Qwen inference",
+  "diagnostic_dataset_sha256": "680405ed46f4fc97236d0ada9139dbdad0f2c8f22aca48025cfc3e173ea0675b",
+  "prompt_X0_sha256": null,
+  "prompt_X1_file_sha256": "9d0565baa07635b260dd6909ce90bade5db20a3890e6b28e26ecf97f6919efc6",
+  "frozen_archive_sha256": "887488fdb39030eaa8381222ba472e1219438afa4d85f7cf4dd0b0fa2289a0f0"
+}

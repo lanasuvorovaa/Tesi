@@ -1,0 +1,67 @@
+caso,indice_azione,citazione,presenza_univoca,errore_citazione,accettata_dopo_allineamento,errori_nota
+UC01-S2TEST-001,1,spedire,True,,False,action[0]:RELATION[0]_SELF_REFERENCE | action[1]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-001,2,inviare,False,QUOTE_NOT_FOUND,False,action[0]:RELATION[0]_SELF_REFERENCE | action[1]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-002,1,rinnovare la tessera della biblioteca,True,,True,
+UC01-S2TEST-003,1,aggiornare la tabella delle spese,True,,False,action[0]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-004,1,telefono all’assicurazione,True,,True,
+UC01-S2TEST-004,2,chiedere la nuova polizza,True,,True,
+UC01-S2TEST-005,1,restituire il trapano,True,,True,
+UC01-S2TEST-005,2,a Davide sabato,True,,True,
+UC01-S2TEST-007,1,chiedere a Sara se ha ricevuto il pacco,True,,False,action[0]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-008,1,La visita con l’oculista,True,,True,
+UC01-S2TEST-008,2,è confermata per venerdì alle 15:30,True,,True,
+UC01-S2TEST-009,1,colloquio online con la cooperativa,True,,True,
+UC01-S2TEST-010,1,in officina,True,,True,
+UC01-S2TEST-010,2,il 12 dicembre,True,,True,
+UC01-S2TEST-010,3,alle 8,True,,True,
+UC01-S2TEST-011,1,fissata la prova dell’orchestra,True,,True,
+UC01-S2TEST-012,1,prenotata,True,,False,a1:RELATION_TARGET_INVALID | a2:RELATION_TARGET_INVALID
+UC01-S2TEST-012,2,per martedì prossimo alle 11,True,,False,a1:RELATION_TARGET_INVALID | a2:RELATION_TARGET_INVALID
+UC01-S2TEST-013,1,aspettando,True,,True,action[1]:DUPLICATE_ACTION_SPAN
+UC01-S2TEST-013,2,aspettando,True,,False,action[1]:DUPLICATE_ACTION_SPAN
+UC01-S2TEST-014,1,sistemare il cancello del cortile,True,,True,
+UC01-S2TEST-015,1,inventario aggiornato,True,,True,
+UC01-S2TEST-016,1,firmare sul modulo,False,QUOTE_NOT_FOUND,False,action[0]:ACTION_QUOTE_NOT_FOUND | action[1]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-016,2,firmare sul modulo,False,QUOTE_NOT_FOUND,False,action[0]:ACTION_QUOTE_NOT_FOUND | action[1]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-017,1,invii,True,,True,action[1]:DUPLICATE_ACTION_SPAN
+UC01-S2TEST-017,2,invii,True,,False,action[1]:DUPLICATE_ACTION_SPAN
+UC01-S2TEST-018,1,ha già inviato la richiesta,True,,False,action[0]:CONTEXT[2]_QUOTE_NOT_FOUND
+UC01-S2TEST-019,1,imparerò a suonare il violoncello,True,,True,
+UC01-S2TEST-021,1,cambierò città,True,,True,
+UC01-S2TEST-021,2,non ho deciso nulla,True,,True,
+UC01-S2TEST-022,1,iscrivermi a un corso di fotografia,True,,True,
+UC01-S2TEST-023,1,publierà un romanzo,False,QUOTE_NOT_FOUND,False,action[0]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-024,1,partecipare a una maratona,True,,True,
+UC01-S2TEST-025,1,Non devo più ritirare il pacco,True,,True,
+UC01-S2TEST-025,2,ci pensa già Alessia,True,,True,
+UC01-S2TEST-026,1,Ho disdetto la visita,True,,True,
+UC01-S2TEST-026,2,non devo andare in ambulatorio lunedì,True,,True,
+UC01-S2TEST-027,1,Non chiamare il tecnico,True,,True,
+UC01-S2TEST-027,2,ho già risolto il problema,True,,True,
+UC01-S2TEST-028,1,scaricare il QR code,True,,False,action[0]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-029,1,controllato il caricatore,True,,True,
+UC01-S2TEST-029,2,comprare la batteria,True,,True,
+UC01-S2TEST-030,1,pesare la valigia,True,,True,action[1]:CONTEXT[0]_QUOTE_NOT_FOUND | action[2]:CONTEXT[0]_QUOTE_NOT_FOUND
+UC01-S2TEST-030,2,stampare l’etichetta,True,,False,action[1]:CONTEXT[0]_QUOTE_NOT_FOUND | action[2]:CONTEXT[0]_QUOTE_NOT_FOUND
+UC01-S2TEST-030,3,prenotare il taxi,True,,False,action[1]:CONTEXT[0]_QUOTE_NOT_FOUND | action[2]:CONTEXT[0]_QUOTE_NOT_FOUND
+UC01-S2TEST-031,1,pagare il bollo,True,,True,
+UC01-S2TEST-031,2,inviare la ricevuta,True,,True,
+UC01-S2TEST-032,1,controllo il numero di serie,True,,True,action[1]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-032,2,apertura della segnalazione al supporto,False,QUOTE_NOT_FOUND,False,action[1]:ACTION_QUOTE_NOT_FOUND
+UC01-S2TEST-033,1,preparo i cartellini,True,,True,
+UC01-S2TEST-033,2,porto il resto,True,,True,
+UC01-S2TEST-033,3,avviso Martina,True,,True,
+UC01-S2TEST-034,1,l’incontro con il gruppo di lettura è confermato,True,,True,
+UC01-S2TEST-034,2,l’incontro con il gruppo di lettura,True,,True,
+UC01-S2TEST-035,1,rivedere le slide,True,,False,action[0]:RELATION[0]_SELF_REFERENCE | action[1]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-035,2,mercoledì,True,,False,action[0]:RELATION[0]_SELF_REFERENCE | action[1]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-036,1,scaricato,True,,True,
+UC01-S2TEST-036,2,consegnarlo,True,,True,
+UC01-S2TEST-037,1,ci passo lunedì,True,,False,action[0]:RELATION[0]_SELF_REFERENCE | action[1]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-037,2,ritirare le casse,True,,False,action[0]:RELATION[0]_SELF_REFERENCE | action[1]:RELATION[0]_SELF_REFERENCE
+UC01-S2TEST-038,1,sparirò,True,,False,action[0]:CONTEXT[0]_QUOTE_NOT_FOUND | action[1]:CONTEXT[0]_QUOTE_NOT_FOUND
+UC01-S2TEST-038,2,chiuderò tutte le porte,True,,False,action[0]:CONTEXT[0]_QUOTE_NOT_FOUND | action[1]:CONTEXT[0]_QUOTE_NOT_FOUND
+UC01-S2TEST-039,1,prenota,True,,True,
+UC01-S2TEST-039,2,cancella i promemoria,True,,True,
+UC01-S2TEST-040,1,Ti chiamerò,True,,True,
+UC01-S2TEST-040,2,domenica,True,,True,

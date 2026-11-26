@@ -1,0 +1,108 @@
+{
+  "version": "0.3",
+  "status": "DESIGN_TO_VERIFY",
+  "status_meaning": {
+    "PROPOSED": "prevista, non verificata come implementata",
+    "OPTIONAL": "possibile funzione futura",
+    "UNSUPPORTED": "fuori ambito corrente"
+  },
+  "capabilities": [
+    {
+      "id": "TASK_CREATE",
+      "description": "Creare task",
+      "status": "PROPOSED",
+      "guardrails": "Scrittura con conferma",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "EVENT_CREATE",
+      "description": "Creare evento",
+      "status": "PROPOSED",
+      "guardrails": "Scrittura con conferma; no orari inventati",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "NOTE_CREATE",
+      "description": "Creare nota",
+      "status": "PROPOSED",
+      "guardrails": "Scrittura con conferma; fonte originale immutata",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "CALENDAR_READ",
+      "description": "Consultare calendario",
+      "status": "PROPOSED",
+      "guardrails": "Solo lettura; controllare freschezza",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "NOTE_SEARCH",
+      "description": "Cercare nelle note",
+      "status": "OPTIONAL",
+      "guardrails": "Ricerca su dati autorizzati",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "TASK_READ",
+      "description": "Consultare task",
+      "status": "PROPOSED",
+      "guardrails": "Solo lettura",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "MUSIC_PLAY",
+      "description": "Riprodurre musica",
+      "status": "UNSUPPORTED",
+      "guardrails": "Non suggerire o eseguire",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "EXTERNAL_WEB_SEARCH",
+      "description": "Cercare sul web",
+      "status": "UNSUPPORTED",
+      "guardrails": "Non dedurre da ricerca note",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "MESSAGE_SEND",
+      "description": "Inviare messaggi",
+      "status": "UNSUPPORTED",
+      "guardrails": "Non inviare a terzi",
+      "runtime_available": false,
+      "enabled_check_required": true
+    },
+    {
+      "id": "RESOURCE_LINK",
+      "description": "Collegare materiali o risorse a task/progetti",
+      "status": "OPTIONAL",
+      "runtime_available": false,
+      "enabled_check_required": true,
+      "guardrails": "Proporre solo se supportato e con materiale esistente; conferma"
+    },
+    {
+      "id": "PROJECT_LINK",
+      "description": "Associare task a progetti",
+      "status": "PROPOSED",
+      "runtime_available": false,
+      "enabled_check_required": true,
+      "guardrails": "Relazione con evidenza, conferma e check duplicati"
+    },
+    {
+      "id": "RELATION_PROPOSE",
+      "description": "Proporre collegamenti tra elementi",
+      "status": "PROPOSED",
+      "runtime_available": false,
+      "enabled_check_required": true,
+      "guardrails": "Nessuna modifica senza conferma"
+    }
+  ],
+  "runtime_rule": "Only verified AVAILABLE and enabled capability may be proposed; PROPOSED and OPTIONAL are not available by default."
+}

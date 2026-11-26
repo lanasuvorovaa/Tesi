@@ -1,0 +1,41 @@
+caso,X0,X1,motivazione
+UC01-S2TEST-001,P,A,X1 preserva la scadenza nel popup; X0 la separa e la perde.
+UC01-S2TEST-002,A,A,Promemoria esplicito integro in entrambe.
+UC01-S2TEST-003,A,A,Task esplicito con dipendenza temporale conservata.
+UC01-S2TEST-004,E,E,Telefonata esplicita senza popup; estrazione presente ma persa a valle.
+UC01-S2TEST-005,E,E,X0 perde la citazione; X1 la valida ma non produce il popup: l’errore si sposta a valle.
+UC01-S2TEST-006,P,A,X1 include portale e scadenza; X0 perde entrambi nel popup.
+UC01-S2TEST-007,A,A,Task con riferimento temporale completo.
+UC01-S2TEST-008,A,A,Evento confermato completo.
+UC01-S2TEST-009,A,A,Evento confermato completo.
+UC01-S2TEST-010,A,A,Appuntamento completo.
+UC01-S2TEST-011,E,E,Nessun popup su evento confermato; X1 preserva il tempo ma rimane escluso a valle.
+UC01-S2TEST-012,A,A,Evento confermato completo.
+UC01-S2TEST-013,E,E,Falso popup su azione/stato di terzi.
+UC01-S2TEST-014,E,E,Falso popup su obbligo attribuito a un terzo.
+UC01-S2TEST-015,A,A,Descrizione senza azione personale esplicita; nessun popup.
+UC01-S2TEST-016,A,A,Descrizione impersonale; nessun popup in assenza di impegno attribuito all’utente.
+UC01-S2TEST-017,A,A,"Obbligo contrattuale del fornitore, non task personale."
+UC01-S2TEST-018,A,A,Azione di terza persona già completata; nessun popup.
+UC01-S2TEST-019,A,A,"Desiderio generico, correttamente senza popup."
+UC01-S2TEST-020,A,A,"Aspirazione vaga, correttamente senza popup."
+UC01-S2TEST-021,E,A,X1 mantiene la frase di indecisione ed evita il falso popup di X0.
+UC01-S2TEST-022,A,A,Idea non confermata; nessun popup.
+UC01-S2TEST-023,A,A,Ipotesi remota; nessun popup.
+UC01-S2TEST-024,E,E,Falso popup su desiderio generico in entrambe le varianti.
+UC01-S2TEST-025,A,A,Azione negata; nessun popup.
+UC01-S2TEST-026,A,A,Visita disdetta; nessun popup.
+UC01-S2TEST-027,A,A,Istruzione negata e problema già risolto; nessun popup.
+UC01-S2TEST-028,E,E,Entrambe perdono il task positivo di scaricare il QR code.
+UC01-S2TEST-029,E,E,Policy post-test: controllare il caricatore è proponibile; entrambe omettono il task.
+UC01-S2TEST-030,A,P,X0 propone un singolo task valido; X1 ingloba tre attività in una proposta non atomica.
+UC01-S2TEST-031,P,P,X0 perde scadenza e prima azione; X1 recupera contesto ma ingloba due task diversi.
+UC01-S2TEST-032,P,P,X0 propone un frammento con connettivo dipendente; X1 include due azioni in un unico popup.
+UC01-S2TEST-033,P,E,X0 propone una sottoazione con contesto limitato; X1 perde completamente la proposta valida.
+UC01-S2TEST-034,A,A,Evento confermato completo.
+UC01-S2TEST-035,A,E,X1 produce una citazione non valida e perde il task; X0 lo propone.
+UC01-S2TEST-036,P,P,"Popup conserva il riferimento anaforico «Quello», non pienamente autonomo."
+UC01-S2TEST-037,P,P,X0 seleziona un frammento anaforico; X1 include il contesto ma anche una frase descrittiva non necessaria.
+UC01-S2TEST-038,A,A,"Contenuto narrativo citato, nessun popup."
+UC01-S2TEST-039,A,A,"Comandi citati come testo di prova, nessun popup."
+UC01-S2TEST-040,A,A,"Titolo di canzone citato, nessun popup."
