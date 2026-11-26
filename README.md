@@ -41,13 +41,13 @@ Ho poi **messo temporaneamente in pausa i confronti** per sviluppare un prototip
 
 - **Cosa ho cambiato:** una nuova versione del prompt C, senza modificare gli altri componenti del confronto.
 - **Risultato sugli stessi 45 frammenti:** da **17/45 a 22/45** classificazioni corrette per entrambi i campi, ma con **5 regressioni** su risultati prima corretti.
-- **Decisione:** C2 è diventato il classificatore candidato, pur con errori ancora presenti su negazioni, contesti e contenuti citati.
+- **Decisione:** non ho sostituito subito C0 nella pipeline stabile, ma C2 è diventato il classificatore candidato per le prove successive, pur con errori ancora presenti su negazioni, contesti e contenuti citati.
 
 ### 6. Selettore delle proposte: S0 contro S1
 
 - **Cosa volevo risolvere:** evitare popup prodotti da frammenti che, isolati, sembravano azioni ma non lo erano.
 - **Risultato sulle 24 note di sviluppo:** da **14 a 12 popup**; sono stati eliminati **2 falsi popup noti**, senza perdere proposte valide precedentemente selezionate in quel set.
-- **Decisione:** continuare con S1 e provarlo su altre note.
+- **Decisione:** continuare con S1 e provarlo su altre note. Su un holdout di 32 note nuove la combinazione X0+C2+Z+S1 non è risultata migliore della baseline X0+C0+Z+S0 (18 corretti, 6 parziali, 6 errati contro 18, 5, 7, più 2 casi non decidibili per entrambe; due miglioramenti e due regressioni).
 
 ### 7. Selettori S1, S2-V, S2-R e S2-VR
 
@@ -109,23 +109,26 @@ Adesso il passo successivo è progettare **C2-CTX v02**, con uno schema più sem
 
 > **Nota sul metodo:** molte prove riportate qui sono diagnostiche e utilizzano note sintetiche già conosciute. I conteggi qualitativi derivano da revisioni manuali preliminari: non vanno presentati come risultati di una validazione indipendente. I test sul solo classificatore non misurano direttamente i popup finali.
 
-## Come vorrei organizzare i file
+## Come è organizzato il repository
 
 ```text
-tesi-assistente-ai-locale/
-├── README.md
-├── prototipo/                   # Demo locale (codice pubblicabile)
-├── esperimenti/
-│   ├── 01-primi-test/
-│   ├── 02-confronto-modelli/
-│   ├── 03-classificazione-c0-c1-c2/
-│   ├── 04-selettori-s0-s1-s2/
-│   ├── 05-estrazione-x0-x1-x2/
-│   ├── 06-contesto-p0-p1/
-│   ├── 07-interfaccia-i1-c2ctx/
-│   ├── 08-audit-i1-e-revisione-i1r/
-│   └── 09-ripetibilita-c2ctx/
-└── documentazione/
+├── README.md          # questo file: il percorso complessivo
+├── esperimenti/       # per ogni esperimento: una descrizione (.md) e i dati (-dati.csv)
+└── prototipo/         # nucleo del codice della demo (X0 + C2 + Z + S2-V)
 ```
 
-Per ogni test vorrei caricare, quando disponibili e verificati: **protocollo**, **script**, **input/dataset pubblicabile**, **output originale**, **report di analisi** e **manifest con configurazione e hash**. Prima di pubblicare i materiali controllerò che non contengano dati personali, percorsi locali sensibili, credenziali, file GGUF o archivi inutilmente duplicati.
+Per ogni esperimento c'è un file `.md` che racconta da dove nasce l'idea, cosa ho fatto, cosa si vede e cosa ne concludo, e un file `-dati.csv` con i risultati grezzi su cui si basano le conclusioni (una riga per nota, frammento o azione).
+
+| Esperimento | Punti del percorso | Descrizione | Dati |
+|---|---|---|---|
+| 01 — Primi test | 1 | [01-primi-test.md](esperimenti/01-primi-test.md) | [CSV](esperimenti/01-primi-test-dati.csv) |
+| 02 — Confronto modelli | 3 | [02-confronto-modelli.md](esperimenti/02-confronto-modelli.md) | [CSV](esperimenti/02-confronto-modelli-dati.csv) |
+| 03 — Classificazione C0, C1, C2 | 4, 5 | [03-classificazione.md](esperimenti/03-classificazione.md) | [CSV](esperimenti/03-classificazione-dati.csv) |
+| 04 — Selettori S0, S1, S2 | 6, 7 | [04-selettori.md](esperimenti/04-selettori.md) | [CSV](esperimenti/04-selettori-dati.csv) |
+| 05 — Estrazione X0, X1, X2 | 8, 9 | [05-estrazione.md](esperimenti/05-estrazione.md) | [CSV](esperimenti/05-estrazione-dati.csv) |
+| 06 — Contesto P0 e P1 | 10 | [06-contesto-p0-p1.md](esperimenti/06-contesto-p0-p1.md) | [CSV](esperimenti/06-contesto-p0-p1-dati.csv) |
+| 07 — Interfaccia I1 e C2-CTX | 11 | [07-interfaccia-i1-c2ctx.md](esperimenti/07-interfaccia-i1-c2ctx.md) | [CSV](esperimenti/07-interfaccia-i1-c2ctx-dati.csv) |
+| 08 — Audit I1 e revisione I1-R | 12, 13 | [08-audit-i1-e-revisione-i1r.md](esperimenti/08-audit-i1-e-revisione-i1r.md) | [CSV](esperimenti/08-audit-i1-e-revisione-i1r-dati.csv) |
+| 09 — Ripetibilità C2-CTX | 14 | [09-ripetibilita-c2ctx.md](esperimenti/09-ripetibilita-c2ctx.md) | [CSV](esperimenti/09-ripetibilita-c2ctx-dati.csv) |
+
+Script completi, prompt, output originali e manifest con gli hash li conservo in locale; non li ho caricati qui per non appesantire il repository. I modelli GGUF non sono inclusi.
