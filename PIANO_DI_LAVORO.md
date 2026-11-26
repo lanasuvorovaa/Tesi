@@ -41,13 +41,47 @@ Per ogni azione devo stabilire se rientra nella tesi e come si collega al telefo
 |---|---|---|---|
 | Creare un'attività o un promemoria | Salvataggio nell'archivio locale dell'app, con notifica alla scadenza | Nulla | Essenziale |
 | Creare un evento nel calendario | L'app apre il calendario del telefono con l'evento già compilato (titolo, data, ora, persone) e l'utente lo salva lì | Nulla, il calendario del telefono è già collegato al suo account | Essenziale |
-| Controllare il calendario prima di proporre (sovrapposizioni, eventi già presenti) | Lettura del calendario del telefono | Permesso di lettura del calendario | Se c'è tempo |
-| Programmare una call | Come un evento. Creare in automatico il link di Meet o Zoom richiede l'accesso all'account del servizio | Login al servizio (Google, Zoom) | Solo evento. Link automatico come sviluppo futuro |
+| Controllare il calendario prima di proporre (sovrapposizioni, eventi già presenti) | Lettura del calendario unificato (vedi «Plugin») | Permesso di lettura del calendario | Se c'è tempo |
+| Programmare una call | Come un evento. Il link di Meet, Teams o Zoom lo crea il plugin del servizio, se collegato | Collegare il plugin del servizio | Solo evento. Link automatico se c'è tempo |
 | Preparare un messaggio o una mail | Il modello scrive una bozza. L'app apre l'app di posta o di messaggistica con il testo precompilato. L'app non invia mai da sola | Nulla | Se c'è tempo |
 | Fare un piccolo piano (scomporre un'attività in passi, ordinare attività collegate) | Proposta di più attività collegate (si lega a UC-02) | Nulla | Sviluppo futuro |
 | Inviare messaggi, fare acquisti, agire per conto dell'utente verso terzi | — | — | Escluso |
 
-Le azioni che richiedono di collegare un account esterno (Google, Microsoft, Zoom) passano da un accesso esplicito dell'utente e restano facoltative: l'app deve funzionare anche senza.
+Le azioni che richiedono di collegare un account esterno (Google, Microsoft, Zoom) passano dai plugin descritti qui sotto: l'utente li attiva solo se vuole e l'app deve funzionare anche senza.
+
+### Plugin: collegare servizi esterni
+
+Tutto ciò che viene da fuori dall'app (Google, Microsoft, Zoom e altri) lo tratto come un **plugin**: un modulo che l'utente collega solo quando vuole attivare una certa funzione e che può scollegare in qualsiasi momento. Ogni plugin dichiara:
+
+- quali dati legge e cosa può fare (per esempio «legge gli eventi», «crea eventi», «crea il link di una riunione»),
+- quale permesso chiede all'utente (permesso del telefono oppure accesso all'account del servizio),
+- cosa succede quando lo scollego: i dati importati da quel servizio vengono cancellati dall'app.
+
+Le azioni dei plugin entrano nel registro delle azioni: un'azione può essere proposta solo se il plugin che la esegue è collegato. Il collegamento e l'esecuzione sono gestiti da codice normale, non dal modello. I dati restano sul telefono, le credenziali sono salvate in modo protetto e il modello riceve solo le informazioni che servono per la singola proposta.
+
+**Il calendario unificato.** L'app ha un proprio calendario che unisce gli appuntamenti delle diverse fonti, senza AI, con un algoritmo:
+
+- mostra insieme gli eventi di tutte le fonti collegate, ciascuno con l'indicazione della provenienza,
+- se due eventi si sovrappongono, lo segnala con una nota («alle 10 hai già un appuntamento su Teams»),
+- se lo stesso appuntamento compare in due calendari (stesso titolo, stessa ora), lo mostra una volta sola indicando le due fonti,
+- un pulsante permette di nascondere gli eventi di una fonte (per esempio tutti quelli di Google).
+
+Il primo passo è semplice: su Android, i calendari Google, Outlook ed Exchange aggiunti agli account del telefono sono già leggibili dal calendario del telefono, con un solo permesso. In questo modo il calendario unificato funziona senza collegare nessuna API esterna. I plugin con accesso diretto all'account servono per le cose in più, come creare il link di una riunione.
+
+**Plugin possibili**, tutti con API pubbliche e con il consenso dell'utente:
+
+| Plugin | Cosa permette | Come si collega | Priorità |
+|---|---|---|---|
+| Calendario del telefono | Leggere gli eventi di tutti i calendari già presenti sul telefono (Google, Outlook, Samsung…) e creare eventi | Permesso Android, nessun account da collegare | Prima, è la base del calendario unificato |
+| Contatti del telefono | Riconoscere le persone citate nelle note («Giada», «Luca») e collegarle a eventi e attività (aiuta UC-02) | Permesso Android | Se c'è tempo |
+| Google Calendar | Leggere e creare eventi direttamente sull'account, creare il link di Google Meet | Accesso all'account Google (OAuth) | Se c'è tempo, come primo plugin con accesso diretto |
+| Microsoft (Outlook e Teams) | Eventi del calendario Outlook, creazione di riunioni Teams | Accesso all'account Microsoft (OAuth, Microsoft Graph) | Sviluppo futuro |
+| Zoom | Creare il link di una riunione Zoom da mettere nell'evento | Accesso all'account Zoom (OAuth) | Sviluppo futuro |
+| Google Tasks / Microsoft To Do | Sincronizzare le attività create dall'app con le liste che l'utente usa già | Accesso all'account (OAuth) | Sviluppo futuro |
+| File (Google Drive, OneDrive, file del telefono) | Scegliere un documento da caricare per le domande sui documenti | Selettore di file di Android, senza accesso all'account | Insieme alla prova sui documenti |
+| Posta (Gmail, Outlook) | Preparare bozze di mail o trovare appuntamenti nelle mail | Accesso all'account, con permessi molto delicati | Sviluppo futuro |
+
+Una nota pratica: per i plugin con accesso all'account (Google, Microsoft, Zoom) bisogna registrare l'app presso il servizio. Per una tesi basta la modalità di prova, che permette l'accesso a un numero limitato di utenti indicati a mano, sufficiente per me e per chi fa il test. Per la posta i permessi sono considerati particolarmente sensibili, per questo la lascio come sviluppo futuro.
 
 ### Non essere invadente
 
@@ -188,7 +222,7 @@ Riepilogo dei passaggi già affrontati e di quelli previsti fino alla consegna d
 | 18 – 31 gen 2027 | UC-02 e UC-03: prove di fattibilità in forma ridotta | Da fare |
 | 30 nov 2026 – 21 feb 2027 | Scrittura della tesi in parallelo. Attività principale a febbraio | Da fare |
 | 21 – 28 feb 2027 | Revisione con il relatore, correzioni e consegna | Da fare |
-| Febbraio 2027, facoltativo | Domande sui documenti caricati (prima sul Mac, poi eventualmente nell'app) ed eventuale versione iOS | Solo se c'è tempo |
+| Febbraio 2027, facoltativo | Domande sui documenti caricati, calendario unificato e primi plugin, eventuale versione iOS | Solo se c'è tempo |
 
 \* Date indicative: gli intervalli segnati con l'asterisco sono ricostruzioni a posteriori, non date di esecuzione verificate né giorni effettivamente lavorati. Le date senza asterisco corrispondono a quelle dei report degli esperimenti. Le fasi possono sovrapporsi. Le attività future sono pianificate e possono essere aggiornate.
 
@@ -231,7 +265,9 @@ Le stime sono in giorni di lavoro effettivo. I task in corsivo sono facoltativi 
 | *F2* | *Domande sui documenti: prova sul Mac con 8–10 documenti e circa 40 domande (facoltativo, priorità alta)* | *4* | *M1* | |
 | *F2b* | *Domande sui documenti nell'app Android, se la prova sul Mac va bene (facoltativo)* | *4* | *F2, M3* | |
 | *F3* | *Bozze di messaggi o mail precompilate (facoltativo)* | *3* | *M3* | |
-| *F4* | *Lettura del calendario per sovrapposizioni ed eventi già presenti (facoltativo)* | *2* | *T3.7* | |
+| *F4* | *Calendario unificato con il plugin del calendario del telefono: unione delle fonti, segnalazione delle sovrapposizioni, eventi doppi, nascondi per fonte (facoltativo)* | *3* | *T3.7* | |
+| *F5* | *Primo plugin con accesso all'account: Google Calendar con link Meet (facoltativo)* | *3* | *F4* | |
+| *F6* | *Plugin dei contatti del telefono per riconoscere le persone (facoltativo)* | *2* | *T3.4* | |
 
 ## Il piano sta nei tempi?
 
@@ -242,7 +278,7 @@ Dal 30 novembre al 28 febbraio, lavorando sei giorni a settimana e togliendo le 
 
 Mancano quindi ancora circa due settimane. Le stime sono indicative e le ricalibro dopo M1, quando saprò quanto vado veloce davvero. Se il ritardo si conferma, taglio in questo ordine, senza comprimere la scrittura:
 
-1. task facoltativi (iPhone, domande sui documenti, bozze di messaggi, lettura del calendario, C2-CTX v02): restano fuori finché non c'è margine. Se si libera tempo, il primo da recuperare è la prova sui documenti,
+1. task facoltativi (iPhone, domande sui documenti, bozze di messaggi, calendario unificato e plugin, C2-CTX v02): restano fuori finché non c'è margine. Se si libera tempo, il primo da recuperare è la prova sui documenti,
 2. UC-02 e UC-03 solo progettati, con una dimostrazione su pochi casi e senza valutazione completa (circa −5 giorni),
 3. test con utenti più leggero, 3–5 persone per pochi giorni (circa −2),
 4. app senza controllo dei duplicati e con commenti più semplici (circa −3).
