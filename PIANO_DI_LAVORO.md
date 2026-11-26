@@ -99,60 +99,41 @@ All'inizio mi piaceva l'idea di far analizzare all'assistente anche dei document
 
 I documenti scansionati e le foto richiederebbero un riconoscimento del testo (OCR) e li lascio fuori. Se c'è tempo, faccio una prova su circa 10 documenti brevi, misurando scadenze e attività trovate, mancanti e inventate, oltre al tempo per documento. In ogni caso, nella tesi lo presenterei come sviluppo futuro con una prima verifica di fattibilità.
 
-## Diagramma di Gantt
+## Calendario
 
-GitHub mostra il diagramma direttamente nella pagina. Le date sono indicative; consegna considerata: 28 febbraio 2027.
+Riepilogo dei passaggi già affrontati e di quelli previsti fino alla consegna del 28 febbraio 2027. Aggiornato al 26 novembre 2026.
 
-```mermaid
-gantt
-    title Piano di lavoro della tesi (30 nov 2026 - 28 feb 2027)
-    dateFormat YYYY-MM-DD
-    axisFormat %d/%m
+### Svolto — settembre / novembre 2026
 
-    section Fase 1 - UC-01
-    T1.1 Raccolta 60 note nuove            :t11, 2026-11-30, 5d
-    T1.2 Gold e protocollo congelato       :t12, 2026-12-03, 4d
-    T1.3 Secondo annotatore e accordo      :t13, after t12, 3d
-    T1.5 Esecuzione sul set nuovo          :t15, after t12, 3d
-    T1.6 Revisione esiti e decisione       :t16, after t15, 4d
-    M1 Classificatore scelto               :milestone, m1, 2026-12-13, 0d
+| Periodo | Attività / risultato | Stato |
+|---|---|---|
+| 21–30 set 2026* | Definizione del problema e dei casi d'uso UC-01, UC-02 e UC-03 | Concluso |
+| 1–10 ott 2026* | Prime prove su note sintetiche e criteri di valutazione | Concluso |
+| 7–27 ott 2026* | Prima pipeline X/C/Z/S e prototipo locale su Mac | Concluso |
+| 28 ott – 9 nov 2026* | Ricerca e confronto tra Qwen3-1.7B, Qwen3.5-2B e LFM2.5-1.2B | Concluso |
+| 7–22 nov 2026* | Classificatori C0/C1/C2 e selettori S0/S1/S2 | Concluso |
+| 19–24 nov 2026* | Estrazione X0/X1/X2 e valutazione delle azioni atomiche | Concluso |
+| 24–25 nov 2026 | Confronto P0/P1: citazione atomica e contesto | Concluso |
+| 25 nov 2026 | Interfaccia I1 e confronto C2/C2-CTX v01 | Concluso |
+| 25 nov 2026 | Audit I1, correzioni I1-R e confronto delle classificazioni | Concluso |
+| 25 nov 2026 | Test di ripetibilità: 60 inferenze su 20 azioni | Concluso |
+| 26 nov 2026 | Aggiornamento del prototipo Mac con X0 → C2 → Z → S2-V | Versione di prova |
+| 26 nov 2026 | Organizzazione di README, documentazione e file per GitHub | Concluso |
 
-    section Fase 2 - Modello su Android
-    T2.1 Ambiente React Native e SDK       :t21, 2026-12-07, 3d
-    T2.2 llama.rn e prima nota sul telefono:t22, after t21, 4d
-    T2.3 Misure tempi memoria batteria     :t23, 2026-12-14, 3d
-    T2.5 Porting Z e S2-V con test         :t25, 2026-12-14, 7d
-    M2 Modello scelto per l'app            :milestone, m2, 2026-12-20, 0d
+### Programmato — novembre 2026 / febbraio 2027
 
-    section Fase 3 - App Android
-    T3.1 Struttura app e schermata note    :t31, 2026-12-17, 5d
-    T3.2 Pipeline UC-01 nell'app           :t32, 2026-12-22, 2027-01-05
-    T3.3 Popup e conferma utente           :t33, 2027-01-05, 6d
-    T3.4 Archivio SQLite e duplicati       :t34, 2027-01-09, 4d
-    T3.5 Registro decisioni e commenti     :t35, 2027-01-12, 3d
-    T3.6 Test completo e APK               :t36, 2027-01-15, 3d
-    M3 App pronta per il test              :milestone, m3, 2027-01-17, 0d
+| Periodo | Attività / risultato | Stato |
+|---|---|---|
+| 30 nov – 13 dic 2026 | UC-01: raccolta di circa 60 note nuove, gold, secondo annotatore e valutazione finale (M1: classificatore scelto) | Da fare |
+| 7 – 20 dic 2026 | Prova di inferenza su Android e misure di tempi, memoria e batteria (M2: modello scelto) | Da fare |
+| 17 dic 2026 – 17 gen 2027 | App Android minima: note, suggerimenti, conferma e archivio locale (M3: app pronta) | Da fare |
+| 12 – 29 gen 2027 | Preparazione, utilizzo e analisi del test con 5–8 utenti | Da fare |
+| 18 – 31 gen 2027 | UC-02 e UC-03: prove di fattibilità in forma ridotta | Da fare |
+| 30 nov 2026 – 21 feb 2027 | Scrittura della tesi in parallelo; attività principale a febbraio | Da fare |
+| 21 – 28 feb 2027 | Revisione con il relatore, correzioni e consegna | Da fare |
+| Febbraio 2027, facoltativo | Eventuale versione iOS e piccola prova sull'analisi di documenti | Solo se c'è tempo |
 
-    section Fase 4 - UC-02 e UC-03
-    T4.1 UC-02 relazioni su 20 note        :t41, 2027-01-18, 4d
-    T4.2 UC-02 valutazione e app           :t42, after t41, 3d
-    T4.3 UC-03 domande come filtri         :t43, 2027-01-25, 4d
-    T4.4 UC-03 valutazione                 :t44, after t43, 2d
-
-    section Fase 5 - Test con utenti
-    T5.1 Consenso questionario istruzioni  :t51, 2027-01-12, 4d
-    T5.2 Test con 5-8 persone              :t52, 2027-01-18, 8d
-    T5.3 Analisi commenti e questionario   :t53, after t52, 4d
-
-    section Se c'e tempo
-    F1 Versione per iPhone                 :f1, 2027-02-01, 5d
-    F2 Analisi di file                     :f2, 2027-02-06, 5d
-
-    section Scrittura (60 pagine)
-    W1 Scrittura testo finale (60 pagine)  :w1, 2026-11-30, 2027-02-21
-    W2 Revisione relatore e correzioni     :w2, 2027-02-21, 2027-02-28
-    Consegna                               :milestone, mc, 2027-02-28, 0d
-```
+\* Date indicative: gli intervalli segnati con l'asterisco sono ricostruzioni a posteriori, non date di esecuzione verificate né giorni effettivamente lavorati. Le date senza asterisco corrispondono a quelle dei report degli esperimenti. Le fasi possono sovrapporsi; le attività future sono pianificate e possono essere aggiornate.
 
 ## Elenco dei task
 
