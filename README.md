@@ -2,13 +2,17 @@
 
 Questo repository raccoglie il prototipo e gli esperimenti che sto svolgendo per la mia tesi. L'obiettivo è costruire un assistente che lavori in locale, interpreti note scritte in linguaggio naturale e **proponga** attività o appuntamenti pertinenti, senza effettuare modifiche automatiche senza conferma.
 
-Il README racconta soprattutto quali prove ho fatto e perché sono passata da una all'altra. I dati e gli script completi saranno organizzati nelle cartelle degli esperimenti.
+Il README racconta soprattutto **quali prove ho fatto e perché sono passata da una all'altra**. Il dettaglio di ogni esperimento e i relativi dati sono nella cartella [`esperimenti/`](esperimenti/).
 
-## Da dove sono partita
+## Il percorso in breve
 
 All'inizio ho preparato note di prova per capire se un piccolo modello linguistico fosse in grado di riconoscere attività, eventi e informazioni che non devono diventare promemoria. Mi sono accorta che non bastava trovare un verbo: il sistema doveva distinguere, per esempio, una cosa da fare da un desiderio, una citazione o un'azione che spetta a un'altra persona.
 
-Ho poi **messo temporaneamente in pausa i confronti** per sviluppare un prototipo utilizzabile sul Mac. Ho collegato estrazione, classificazione, controlli e selezione delle proposte, usando Qwen3-1.7B in locale tramite llama.cpp. Quando la demo ha iniziato a funzionare, sono tornata alla ricerca sui modelli e agli esperimenti più mirati.
+Con quello che avevo imparato da queste prime prove ho costruito un **primo prototipo** sul Mac, collegando estrazione, classificazione, controlli e selezione delle proposte, con Qwen3-1.7B in locale tramite llama.cpp. Usandolo ho capito che funzionava, ma che andava modificato e migliorato in più punti.
+
+Prima di intervenire ho approfondito come vengono usati in pratica gli small language model: ho cercato materiale online e non solo, per capire come altre persone li provano e li adattano a compiti simili, quali modelli usano e con quali accorgimenti. Da qui sono nati il confronto tra modelli alternativi e una serie di test mirati sui singoli componenti della pipeline.
+
+Sulla base di questi risultati ho sviluppato una **nuova versione del prototipo**, che usa la configurazione emersa dagli esperimenti ed è quella presente nella cartella [`prototipo/`](prototipo/).
 
 ## I test svolti, in ordine
 
@@ -18,17 +22,17 @@ Ho poi **messo temporaneamente in pausa i confronti** per sviluppare un prototip
 - **Cosa ho fatto:** ho costruito note sintetiche e raccolto esempi di errori; in seguito ho usato un development set di 24 note, altri set diagnostici e un insieme sintetico di 40 note.
 - **Cosa ho imparato:** dovevo valutare non solo se compariva un popup, ma anche se fosse corretto, completo e attribuito alla persona giusta.
 
-### 2. Sviluppo del prototipo locale
+### 2. Primo prototipo locale
 
 - **Cosa volevo ottenere:** passare dai singoli test a una demo con componenti collegati.
 - **Cosa ho fatto:** ho organizzato la pipeline in **X (estrazione) → C (classificazione) → Z (controlli) → S (selezione)** e l'ho fatta lavorare con Qwen3-1.7B sul Mac.
-- **Cosa ho imparato:** un errore nel risultato finale può dipendere da componenti diversi; per capirne la causa servono test separati.
+- **Cosa ho imparato:** il prototipo andava migliorato, e un errore nel risultato finale può dipendere da componenti diversi; per capirne la causa servono test separati.
 
-### 3. Ricerca e confronto di modelli alternativi
+### 3. Approfondimento sugli small language model e confronto tra modelli
 
 - **Modelli considerati:** Qwen3-1.7B, Qwen3.5-2B e LFM2.5-1.2B.
-- **Cosa volevo capire:** se fosse meglio sostituire il modello di riferimento invece di continuare a cambiare prompt e regole.
-- **Cosa ho fatto:** ho ripreso la ricerca sulle alternative e confrontato risultati e comportamento sul nostro scenario.
+- **Cosa volevo capire:** come vengono usati in pratica i modelli piccoli e se fosse meglio sostituire il modello di riferimento invece di continuare a cambiare prompt e regole.
+- **Cosa ho fatto:** ho raccolto informazioni su come altre persone usano e provano questi modelli, ho scelto alcune alternative e ho confrontato risultati e comportamento sul mio scenario.
 - **Decisione:** ho mantenuto **Qwen3-1.7B** come modello di riferimento per le prove successive. Questo non significa che sia universalmente il modello migliore, ma che è rimasto la scelta di lavoro per il prototipo.
 
 ### 4. Classificazione: C0 contro C1
@@ -105,9 +109,11 @@ La configurazione **candidata**, che non ho sostituito con le varianti speriment
 
 **`X0 → C2 → Z → S2-V`**
 
+È la configurazione usata nella nuova versione del prototipo, che si trova in [`prototipo/`](prototipo/) insieme a un breve video dimostrativo.
+
 Adesso il passo successivo è progettare **C2-CTX v02**, con uno schema più semplice e regole più esplicite per distinguere eventi, attività, soggetti, citazioni, desideri e negazioni. Prima di considerarlo un miglioramento, sarà necessario testarlo separatamente e poi valutarlo su **note nuove**, non utilizzate per costruire i prompt o le regole.
 
-> **Nota sul metodo:** molte prove riportate qui sono diagnostiche e utilizzano note sintetiche già conosciute. I conteggi qualitativi derivano da revisioni manuali preliminari: non vanno presentati come risultati di una validazione indipendente. I test sul solo classificatore non misurano direttamente i popup finali.
+> **Nota sul metodo:** molte prove riportate qui sono diagnostiche e utilizzano note sintetiche già conosciute. I conteggi qualitativi derivano da revisioni preliminari: non vanno presentati come risultati di una validazione indipendente. I test sul solo classificatore non misurano direttamente i popup finali.
 
 ## Come è organizzato il repository
 
