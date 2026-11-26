@@ -2,7 +2,7 @@
 
 Questo repository raccoglie il prototipo e gli esperimenti che sto svolgendo per la mia tesi. L'obiettivo è costruire un assistente che lavori in locale, interpreti note scritte in linguaggio naturale e **proponga** attività o appuntamenti pertinenti, senza effettuare modifiche automatiche senza conferma.
 
-Il prodotto finale a cui voglio arrivare è un'**applicazione mobile**, per ora per Android (e in seguito, se c'è tempo, anche per iPhone), che esegue un modello linguistico piccolo direttamente sul telefono e copre tre casi d'uso: riconoscere attività, eventi e informazioni nelle note (**UC-01**), collegarle tra loro (**UC-02**) e rispondere a domande sui dati memorizzati (**UC-03**). Il lavoro fatto finora riguarda soprattutto UC-01; obiettivi, fasi e calendario fino alla consegna sono descritti in [`PIANO_DI_LAVORO.md`](PIANO_DI_LAVORO.md).
+Il prodotto finale a cui voglio arrivare è un'**applicazione mobile**, per ora per Android (e in seguito, se c'è tempo, anche per iPhone), che esegue un modello linguistico piccolo direttamente sul telefono e copre tre casi d'uso: riconoscere attività, eventi e informazioni nelle note (**UC-01**), collegarle tra loro (**UC-02**) e rispondere a domande sui dati memorizzati (**UC-03**). Il lavoro fatto finora riguarda soprattutto UC-01. Obiettivi, fasi e calendario fino alla consegna sono descritti in [`PIANO_DI_LAVORO.md`](PIANO_DI_LAVORO.md).
 
 Il README racconta soprattutto **quali prove ho fatto e perché sono passata da una all'altra**. Il dettaglio di ogni esperimento e i relativi dati sono nella cartella [`esperimenti/`](esperimenti/).
 
@@ -21,14 +21,14 @@ Sulla base di questi risultati ho sviluppato una **nuova versione del prototipo*
 ### 1. Prime prove sulle note e definizione dei casi
 
 - **Cosa volevo capire:** se il modello riconoscesse task, eventi, date, negazioni e contenuti da ignorare.
-- **Cosa ho fatto:** ho costruito note sintetiche e raccolto esempi di errori; in seguito ho usato un development set di 24 note, altri set diagnostici e un insieme sintetico di 40 note.
+- **Cosa ho fatto:** ho costruito note sintetiche e raccolto esempi di errori. In seguito ho usato un development set di 24 note, altri set diagnostici e un insieme sintetico di 40 note.
 - **Cosa ho imparato:** dovevo valutare non solo se compariva un popup, ma anche se fosse corretto, completo e attribuito alla persona giusta.
 
 ### 2. Primo prototipo locale
 
 - **Cosa volevo ottenere:** passare dai singoli test a una demo con componenti collegati.
 - **Cosa ho fatto:** ho organizzato la pipeline in **X (estrazione) → C (classificazione) → Z (controlli) → S (selezione)** e l'ho fatta lavorare con Qwen3-1.7B sul Mac.
-- **Cosa ho imparato:** il prototipo andava migliorato, e un errore nel risultato finale può dipendere da componenti diversi; per capirne la causa servono test separati.
+- **Cosa ho imparato:** il prototipo andava migliorato, e un errore nel risultato finale può dipendere da componenti diversi. Per capirne la causa servono test separati.
 
 ### 3. Approfondimento sugli small language model e confronto tra modelli
 
@@ -41,7 +41,7 @@ Sulla base di questi risultati ho sviluppato una **nuova versione del prototipo*
 
 - **Cosa ho cambiato:** il prompt di classificazione, mantenendo 45 frammenti di estrazione condivisi.
 - **Risultato sulle 24 note di sviluppo:** classificazioni corrette per entrambi i campi (`kind` e `intent`) da **17/45 a 18/45**.
-- **Decisione:** il miglioramento era troppo piccolo e accompagnato da regressioni; ho continuato a lavorare sul classificatore.
+- **Decisione:** il miglioramento era troppo piccolo e accompagnato da regressioni. Ho continuato a lavorare sul classificatore.
 
 ### 5. Classificazione: C0 contro C2
 
@@ -52,57 +52,57 @@ Sulla base di questi risultati ho sviluppato una **nuova versione del prototipo*
 ### 6. Selettore delle proposte: S0 contro S1
 
 - **Cosa volevo risolvere:** evitare popup prodotti da frammenti che, isolati, sembravano azioni ma non lo erano.
-- **Risultato sulle 24 note di sviluppo:** da **14 a 12 popup**; sono stati eliminati **2 falsi popup noti**, senza perdere proposte valide precedentemente selezionate in quel set.
-- **Decisione:** continuare con S1 e provarlo su altre note. Su un holdout di 32 note nuove la combinazione X0+C2+Z+S1 non è risultata migliore della baseline X0+C0+Z+S0 (18 corretti, 6 parziali, 6 errati contro 18, 5, 7, più 2 casi non decidibili per entrambe; due miglioramenti e due regressioni).
+- **Risultato sulle 24 note di sviluppo:** da **14 a 12 popup**. Sono stati eliminati **2 falsi popup noti**, senza perdere proposte valide precedentemente selezionate in quel set.
+- **Decisione:** continuare con S1 e provarlo su altre note. Su un holdout di 32 note nuove la combinazione X0+C2+Z+S1 non è risultata migliore della baseline X0+C0+Z+S0 (18 corretti, 6 parziali, 6 errati contro 18, 5, 7, più 2 casi non decidibili per entrambe, due miglioramenti e due regressioni).
 
 ### 7. Selettori S1, S2-V, S2-R e S2-VR
 
 - **Cosa ho fatto:** ho confrontato quattro varianti del selettore su **40 nuove note sintetiche**.
-- **Risultato:** S2-V e S2-VR hanno evitato il falso popup su «Magari un giorno imparerò a suonare il violoncello»; le quattro varianti davano lo stesso esito su **39/40 note**.
+- **Risultato:** S2-V e S2-VR hanno evitato il falso popup su «Magari un giorno imparerò a suonare il violoncello». Le quattro varianti davano lo stesso esito su **39/40 note**.
 - **Decisione:** mantenere **S2-V** come selettore candidato, senza confondere il vantaggio su un caso con una validazione generale.
 
 ### 8. Estrazione delle informazioni: X0 contro X1
 
 - **Cosa volevo migliorare:** conservare informazioni importanti come date, oggetti e destinatari nelle citazioni estratte.
-- **Risultato sulle 40 note note:** X1 recuperava alcuni dettagli, ma peggiorava altri casi e univa azioni separate; valutazione qualitativa **X0: 24 corretti, 7 parziali, 9 errati; X1: 25 corretti, 5 parziali, 10 errati**.
+- **Risultato sulle 40 note note:** X1 recuperava alcuni dettagli, ma peggiorava altri casi e univa azioni separate. Valutazione qualitativa **X0: 24 corretti, 7 parziali, 9 errati. X1: 25 corretti, 5 parziali, 10 errati**.
 - **Decisione:** non sostituire X0.
 
 ### 9. Estrazione atomica: X2 v01 e X2 v02
 
 - **Cosa volevo risolvere:** distinguere più azioni nella stessa nota, mantenendo il relativo contesto.
-- **X2 v01:** il modello individuava citazioni utili, ma non produceva intervalli testuali affidabili; gli offset sono stati poi ricostruiti con un allineamento esatto in Python.
+- **X2 v01:** il modello individuava citazioni utili, ma non produceva intervalli testuali affidabili. Gli offset sono stati poi ricostruiti con un allineamento esatto in Python.
 - **X2 v02:** su 40 note sono state accettate **39 azioni**. La valutazione finale per nota era **16 corretti, 11 parziali, 13 errati**, peggiore della pipeline X0 sui casi osservati.
 - **Decisione:** non adottare X2. Il punto critico era anche l'interfaccia: passare al classificatore solo l'azione breve faceva perdere negazioni e scadenze.
 
 ### 10. Proiezione delle citazioni: P0 contro P1
 
 - **Cosa ho confrontato:** **P0**, che passa la sola azione atomica, e **P1**, che passa una clausola più estesa della nota.
-- **Risultato su 40 note:** P0 **16 corretti / 12 parziali / 12 errati**; P1 **25 corretti / 4 parziali / 11 errati**. Entrambe generavano 18 popup, ma non sugli stessi casi.
+- **Risultato su 40 note:** P0 **16 corretti / 12 parziali / 12 errati**. P1 **25 corretti / 4 parziali / 11 errati**. Entrambe generavano 18 popup, ma non sugli stessi casi.
 - **Cosa ho imparato:** più contesto rende spesso le proposte più complete, ma può introdurre falsi popup o far perdere attività reali.
 - **Decisione:** progettare un'interfaccia che mantenga **azione e contesto separati**, invece di allungare sempre le citazioni.
 
 ### 11. Prima interfaccia contestuale: I1 e C2-CTX v01
 
-- **Cosa ho provato:** passare al classificatore l'azione atomica con riferimenti al contesto; ho confrontato **C2 e C2-CTX** sulle stesse **39 azioni**, ottenendo **78 classificazioni valide**.
+- **Cosa ho provato:** passare al classificatore l'azione atomica con riferimenti al contesto. Ho confrontato **C2 e C2-CTX** sulle stesse **39 azioni**, ottenendo **78 classificazioni valide**.
 - **Risultato:** i due classificatori differivano su **16/39 azioni**. C2-CTX recuperava alcuni task, ma confondeva molti eventi con task e attribuiva **SELF a tutte le 39 azioni**, anche quando riguardavano terzi o citazioni.
 - **Decisione:** non adottare C2-CTX v01.
 
 ### 12. Audit dei dati inviati al classificatore
 
 - **Cosa volevo capire:** se gli errori dipendessero dal modello o da contesti già rappresentati male.
-- **Risultato:** nei **50 riferimenti contestuali** trasferiti a I1, la revisione preliminare ha rilevato **29 ruoli incoerenti** e **5 riferimenti troppo ampi**; inoltre non erano state trasferite relazioni tra attività.
+- **Risultato:** nei **50 riferimenti contestuali** trasferiti a I1, la revisione preliminare ha rilevato **29 ruoli incoerenti** e **5 riferimenti troppo ampi**. Inoltre non erano state trasferite relazioni tra attività.
 - **Decisione:** correggere prima i dati di ingresso e confrontarli con la versione originale.
 
 ### 13. Revisione del contesto: I1 contro I1-R
 
 - **Cosa ho cambiato:** i contesti di **18 azioni** appartenenti a 12 note, lasciando invariate le **39 azioni X2** e C2-CTX v01.
-- **Risultato:** **35/39 classificazioni identiche** nei sei campi analizzati; solo quattro azioni hanno avuto almeno una differenza. Non è migliorata la distinzione tra eventi e task né l'attribuzione del soggetto.
+- **Risultato:** **35/39 classificazioni identiche** nei sei campi analizzati. Solo quattro azioni hanno avuto almeno una differenza. Non è migliorata la distinzione tra eventi e task né l'attribuzione del soggetto.
 - **Decisione:** correggere i dati, da solo, non basta. Un cambiamento è comparso perfino a input invariato, quindi serviva un test di ripetibilità.
 
 ### 14. Ripetibilità di C2-CTX su input identici
 
 - **Cosa ho fatto:** **20 azioni**, ripetute **3 volte** ciascuna con stessi input e parametri: **60 inferenze**.
-- **Risultato:** **60/60 risposte valide**, **19/20 azioni stabili** in tutti i campi; una sola azione oscillava nell'intenzione tra `COMPLETED` e `COMMITTED`.
+- **Risultato:** **60/60 risposte valide**, **19/20 azioni stabili** in tutti i campi. Una sola azione oscillava nell'intenzione tra `COMPLETED` e `COMMITTED`.
 - **Cosa ho imparato:** il problema principale sembra essere la **correttezza semantica**, più che la variabilità delle risposte. Una risposta ripetuta può comunque essere sbagliata.
 
 ## Dove sono arrivata
@@ -115,10 +115,10 @@ La configurazione **candidata**, che non ho sostituito con le varianti speriment
 
 I prossimi passi, in breve:
 
-1. valutare UC-01 su un **set di note nuove**, scritte da altre persone e non usate per costruire prompt o regole, provando anche **C2-CTX v02** in un tempo limitato;
-2. verificare che il modello giri **su un telefono Android**, misurando tempi, memoria e batteria;
-3. costruire un'**app Android minima** (in React Native, così da poterla portare in seguito anche su iPhone) con proposta, conferma, archivio locale e la possibilità di commentare le proposte;
-4. provare **UC-02 e UC-03 in forma ridotta**;
+1. valutare UC-01 su un **set di note nuove**, scritte da altre persone e non usate per costruire prompt o regole, provando anche **C2-CTX v02** in un tempo limitato,
+2. verificare che il modello giri **su un telefono Android**, misurando tempi, memoria e batteria,
+3. costruire un'**app Android minima** (in React Native, così da poterla portare in seguito anche su iPhone) con proposta, conferma, archivio locale e la possibilità di commentare le proposte,
+4. provare **UC-02 e UC-03 in forma ridotta**,
 5. fare un **test con alcuni utenti**, raccogliendo i loro commenti.
 
 Il dettaglio di ogni fase (cosa misuro, quando la considero chiusa, cosa mi serve) è in [`PIANO_DI_LAVORO.md`](PIANO_DI_LAVORO.md).
@@ -148,4 +148,4 @@ Per ogni esperimento c'è un file `.md` che racconta da dove nasce l'idea, cosa 
 | 08 — Audit I1 e revisione I1-R | 12, 13 | [08-audit-i1-e-revisione-i1r.md](esperimenti/08-audit-i1-e-revisione-i1r.md) | [CSV](esperimenti/08-audit-i1-e-revisione-i1r-dati.csv) |
 | 09 — Ripetibilità C2-CTX | 14 | [09-ripetibilita-c2ctx.md](esperimenti/09-ripetibilita-c2ctx.md) | [CSV](esperimenti/09-ripetibilita-c2ctx-dati.csv) |
 
-Script completi, prompt, output originali e manifest con gli hash li conservo in locale; non li ho caricati qui per non appesantire il repository. I modelli GGUF non sono inclusi.
+Script completi, prompt, output originali e manifest con gli hash li conservo in locale. Non li ho caricati qui per non appesantire il repository. I modelli GGUF non sono inclusi.

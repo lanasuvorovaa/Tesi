@@ -52,7 +52,7 @@ La finestra presenta la proposta, se presente, le citazioni estratte, il tipo di
 ## Limiti da mantenere espliciti
 
 - La demo opera soltanto in modalità **simulazione**, senza accesso a promemoria o calendari.
-- L'estrazione può perdere azioni, dettagli temporali e relazioni tra attività; una proposta può essere incompleta o errata.
+- L'estrazione può perdere azioni, dettagli temporali e relazioni tra attività. Una proposta può essere incompleta o errata.
 - La configurazione è una **candidata sperimentale**, non una pipeline definitivamente validata in produzione.
 - I test unitari controllano il comportamento del codice su risposte simulate, **non** misurano la qualità del modello su note nuove.
 - I file in `pipeline/frozen/` provengono dal riferimento sperimentale e non sono stati modificati.

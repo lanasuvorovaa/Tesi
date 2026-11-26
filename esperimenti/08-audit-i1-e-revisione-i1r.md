@@ -6,7 +6,7 @@ Nell'esperimento 07 C2-CTX v01 aveva trasformato quasi tutti gli eventi in task,
 
 L'esperimento ha due parti:
 
-1. un **audit** dei riferimenti contestuali di I1, senza nuove inferenze;
+1. un **audit** dei riferimenti contestuali di I1, senza nuove inferenze,
 2. una **prova appaiata** in cui correggo a mano i contesti di alcune azioni (I1-R) e li passo allo stesso C2-CTX v01, per vedere se cambiano le classificazioni.
 
 ## Cosa ho fatto
@@ -30,9 +30,9 @@ Alcuni problemi non si potevano correggere solo con il contesto e li ho lasciati
 
 I ruoli usati sono solo quattro: `time` (24), `recipient` (18), `place` (5) e `condition` (3). Non compaiono mai `polarity`, `modality`, `completion`, `speaker`, `discourse` o `antecedent`. Il classificatore quindi non riceveva in forma esplicita proprio le informazioni su negazioni, desideri e soggetti. Qualche esempio:
 
-- in 006 il verbo «caricare» è etichettato come `time`;
-- in 010 «il 12 dicembre alle 8» è etichettato come `place` e come `recipient`;
-- in 020 «Mi piacerebbe» è etichettato come `time`;
+- in 006 il verbo «caricare» è etichettato come `time`,
+- in 010 «il 12 dicembre alle 8» è etichettato come `place` e come `recipient`,
+- in 020 «Mi piacerebbe» è etichettato come `time`,
 - in 025 «ci pensa già Alessia» è un `recipient`, e non viene registrato che l'azione è di un'altra persona.
 
 L'adattatore aveva inoltre segnalato 17 perdite: 16 ruoli `object_reference` non supportati e la relazione `after` della nota 026, presente in X2 ma non trasferita.
@@ -43,7 +43,7 @@ L'adattatore aveva inoltre segnalato 17 perdite: 16 ruoli `object_reference` non
 |---|---|---|
 | 011-a1 «è fissata la prova dell'orchestra» | completion PENDING → DONE, uncertain True → False | input identico: non può dipendere dalla revisione |
 | 026-a1 «Ho disdetto la visita» | intent COMMITTED → COMPLETED | miglioramento plausibile |
-| 028-a1 «devo scaricare il QR code» | intent COMMITTED → TENTATIVE, completion DONE → PENDING, uncertain False → True | misto; polarity resta NEGATIVE |
+| 028-a1 «devo scaricare il QR code» | intent COMMITTED → TENTATIVE, completion DONE → PENDING, uncertain False → True | misto, `polarity` resta NEGATIVE |
 | 039-a1 «prenota una stanza» | intent COMMITTED → TENTATIVE, polarity POSITIVE → UNCLEAR, completion DONE → PENDING, uncertain False → True | meno assertivo, ma resta un TASK di SELF |
 
 `kind` e `subject_owner` non cambiano mai: TASK 38 / EVENT 1 e SELF 39/39 in entrambe le condizioni. Restano quindi gli errori più importanti. La visita oculistica (008) e l'incontro del gruppo di lettura (034) restano TASK. Il fornitore di «Il contratto prevede che il fornitore invii un rapporto mensile» (017) e Alessia (025) restano SELF. «Mi piacerebbe aprire un laboratorio di ceramica» (020) resta COMMITTED anche con «Mi piacerebbe» marcato come `modality`. La frase del romanzo (038) resta TASK/COMMITTED/SELF/DONE.

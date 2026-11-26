@@ -6,7 +6,7 @@ Il confronto tra P0 e P1 mi aveva lasciato con un problema aperto. P0 passava al
 
 Mi sono chiesta se si potesse tenere separata l'azione dal suo contesto, invece di allungare sempre la citazione. Ho quindi progettato un'interfaccia, che ho chiamato I1, in cui ogni azione ha:
 
-- una citazione contigua della nota (`action_evidence`), con gli indici calcolati in Python e non chiesti al modello;
+- una citazione contigua della nota (`action_evidence`), con gli indici calcolati in Python e non chiesti al modello,
 - una lista di riferimenti al contesto (`context_refs`), ognuno con citazione esatta, ruolo (`time`, `place`, `recipient`, `condition`, ...) e portata, cioè a quali azioni si applica.
 
 Siccome il classificatore C2 accetta una sola stringa, passargli azione e contesto separati significa cambiare il significato del suo input. Per questo ho scritto un prompt nuovo, C2-CTX, che oltre a `kind` e `intent` restituisce anche `subject_owner` (chi deve fare l'azione), `polarity`, `completion` e `uncertain`.
@@ -30,7 +30,7 @@ Tutte le 78 risposte sono JSON validi rispetto allo schema (39 per C2 e 39 per C
 | EVENT | 6 | 1 |
 | FACT | 9 | 0 |
 
-C2-CTX tende a trasformare quasi tutto in TASK. I due classificatori differiscono su `kind` o `intent` in **16 azioni su 39**; nelle altre 23 queste due etichette restano uguali. Nella revisione preliminare dei 16 cambiamenti:
+C2-CTX tende a trasformare quasi tutto in TASK. I due classificatori differiscono su `kind` o `intent` in **16 azioni su 39**. Nelle altre 23 queste due etichette restano uguali. Nella revisione preliminare dei 16 cambiamenti:
 
 | Giudizio sul cambiamento | Azioni |
 |---|---:|
@@ -48,9 +48,9 @@ Alcuni casi concreti:
 
 Anche gli attributi nuovi sono poco credibili:
 
-- `subject_owner=SELF` in **39/39** azioni, anche dove l'azione è di un'altra persona (per esempio la segreteria che aspetta il corriere, nota 013);
-- `polarity=POSITIVE` in 37/39 (le altre 2 UNCLEAR), quindi nessuna negazione riconosciuta;
-- `completion=DONE` in 11/39, anche per azioni future come «devo scaricare il QR code» (028);
+- `subject_owner=SELF` in **39/39** azioni, anche dove l'azione è di un'altra persona (per esempio la segreteria che aspetta il corriere, nota 013),
+- `polarity=POSITIVE` in 37/39 (le altre 2 UNCLEAR), quindi nessuna negazione riconosciuta,
+- `completion=DONE` in 11/39, anche per azioni future come «devo scaricare il QR code» (028),
 - `uncertain=True` in 28/39.
 
 Infine, una parte degli errori nasce prima del classificatore. Alcune azioni estratte da X2 non sono autonome («prenotata» in 012, «per venerdì alle 15:30» come seconda azione in 008), e alcuni ruoli del contesto sono discutibili, come l'intera frase della visita etichettata `time` nella 008. In più, I1 ha segnalato 17 problemi di conversione: 16 ruoli `object_reference` non supportati e una relazione tra azioni (nota 026) non trasferita.
@@ -65,4 +65,4 @@ Limiti: le 40 note sono sintetiche e già usate negli esperimenti precedenti, qu
 
 ## Dati
 
-`07-interfaccia-i1-c2ctx-dati.csv` (39 righe, una per azione) è la tabella di revisione del confronto. `caso` e `azione_id` identificano l'azione; `nota` e `azione` riportano il testo della nota e la citazione dell'azione; `contesti` è la lista dei riferimenti I1 in JSON; `C2_kind`/`C2_intent` e le colonne `C2_CTX_*` sono le etichette dei due classificatori; `etichette_differenti` vale 1 se cambia `kind` o `intent`; `giudizio_modifica` (INVARIATO, MIGLIORA, PEGGIORA, INCERTO) e `motivazione` sono il giudizio della revisione preliminare; `verifica_umana` indica che il giudizio è ancora da confermare.
+`07-interfaccia-i1-c2ctx-dati.csv` (39 righe, una per azione) è la tabella di revisione del confronto. `caso` e `azione_id` identificano l'azione. `nota` e `azione` riportano il testo della nota e la citazione dell'azione. `contesti` è la lista dei riferimenti I1 in JSON. `C2_kind`/`C2_intent` e le colonne `C2_CTX_*` sono le etichette dei due classificatori. `etichette_differenti` vale 1 se cambia `kind` o `intent`. `giudizio_modifica` (INVARIATO, MIGLIORA, PEGGIORA, INCERTO) e `motivazione` sono il giudizio della revisione preliminare. `verifica_umana` indica che il giudizio è ancora da confermare.

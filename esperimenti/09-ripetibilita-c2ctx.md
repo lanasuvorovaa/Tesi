@@ -36,11 +36,11 @@ Il controllo 011-a1, invece, qui è stabile: TASK/COMMITTED/SELF/POSITIVE/PENDIN
 
 Le risposte stabili però sono spesso sbagliate, e sempre nello stesso modo:
 
-- `subject_owner=SELF` in tutte le 60 risposte;
-- «La visita con l'oculista è confermata per venerdì alle 15:30» (008) è TASK/COMMITTED con `completion=DONE`, tutte e tre le volte;
-- il fornitore di 017 è sempre SELF;
-- «Mi piacerebbe aprire un laboratorio di ceramica, prima o poi» (020) è sempre TASK/COMMITTED;
-- «Non devo più ritirare il pacco: ci pensa già Alessia» (025) è sempre TASK/COMMITTED/SELF/DONE;
+- `subject_owner=SELF` in tutte le 60 risposte,
+- «La visita con l'oculista è confermata per venerdì alle 15:30» (008) è TASK/COMMITTED con `completion=DONE`, tutte e tre le volte,
+- il fornitore di 017 è sempre SELF,
+- «Mi piacerebbe aprire un laboratorio di ceramica, prima o poi» (020) è sempre TASK/COMMITTED,
+- «Non devo più ritirare il pacco: ci pensa già Alessia» (025) è sempre TASK/COMMITTED/SELF/DONE,
 - la citazione del romanzo (038) è sempre un TASK personale.
 
 ## Cosa ne concludo
@@ -55,4 +55,4 @@ Limiti: il test è piccolo (20 azioni, 3 ripetizioni) e usa note sintetiche già
 
 ## Dati
 
-`09-ripetibilita-c2ctx-dati.csv` ha 20 righe, una per azione. `gruppo` distingue le 18 azioni `revisionata` (contesto I1-R) dai 2 `controllo`; `nota` e `azione` sono il testo; `ripetizioni` e `valide` contano le risposte; `identico_tutte_le_volte` vale 1 se le sei uscite coincidono nei tre round e `configurazioni_distinte` conta le combinazioni diverse ottenute. Le colonne `kind`, `intent`, `subject_owner`, `polarity`, `completion` e `uncertain` riportano il valore ottenuto; quando cambia tra i round compaiono i tre valori in ordine (round 1 / 2 / 3). `campi_variabili` elenca i campi instabili, `ordine_r1_r2_r3` la posizione dell'azione in ciascun round e `latenza_ms_r1_r2_r3` i tempi di risposta.
+`09-ripetibilita-c2ctx-dati.csv` ha 20 righe, una per azione. `gruppo` distingue le 18 azioni `revisionata` (contesto I1-R) dai 2 `controllo`. `nota` e `azione` sono il testo. `ripetizioni` e `valide` contano le risposte. `identico_tutte_le_volte` vale 1 se le sei uscite coincidono nei tre round e `configurazioni_distinte` conta le combinazioni diverse ottenute. Le colonne `kind`, `intent`, `subject_owner`, `polarity`, `completion` e `uncertain` riportano il valore ottenuto. Quando cambia tra i round compaiono i tre valori in ordine (round 1 / 2 / 3). `campi_variabili` elenca i campi instabili, `ordine_r1_r2_r3` la posizione dell'azione in ciascun round e `latenza_ms_r1_r2_r3` i tempi di risposta.

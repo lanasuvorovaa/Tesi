@@ -38,16 +38,16 @@ La riunione viene quasi sempre riconosciuta, ma il compito delle slide diventa T
 
 **Development set (24 note, 45 frammenti).** La pipeline di riferimento ha prodotto 11 popup (10 `PROPOSE`, 1 `CLARIFY`), nessuna segnalazione tecnica, tempo medio di inferenza 3,54 s per nota. Guardando le note una per una:
 
-- funziona sui casi più netti: «Domani devo prenotare il furgone» (019) viene proposto e «Ieri ho restituito le chiavi» no; gli appuntamenti fissati di 080 e 107 diventano EVENT;
-- in 060 («Non devo più chiamare il fornitore; devo invece scrivergli una mail») la mail viene etichettata FACT e non c'è nessun popup: l'attività reale si perde;
-- in 062 il popup è «La riunione con Chiara», senza giorno e ora, e le slide sono etichettate FACT/COMPLETED;
-- in 024 («imballare i libri, avvisare il condominio e ritirare gli scatoloni») viene proposta una sola delle tre attività, e le altre due sono etichettate FACT/TENTATIVE ed EVENT;
-- in 022 e 095 i comandi citati vengono in parte classificati come impegni («Domani cancello ogni appuntamento», «cancella il calendario» come EVENT/COMMITTED), ma Z li blocca e non compare nessun popup;
+- funziona sui casi più netti: «Domani devo prenotare il furgone» (019) viene proposto e «Ieri ho restituito le chiavi» no. Gli appuntamenti fissati di 080 e 107 diventano EVENT,
+- in 060 («Non devo più chiamare il fornitore, devo invece scrivergli una mail») la mail viene etichettata FACT e non c'è nessun popup: l'attività reale si perde,
+- in 062 il popup è «La riunione con Chiara», senza giorno e ora, e le slide sono etichettate FACT/COMPLETED,
+- in 024 («imballare i libri, avvisare il condominio e ritirare gli scatoloni») viene proposta una sola delle tre attività, e le altre due sono etichettate FACT/TENTATIVE ed EVENT,
+- in 022 e 095 i comandi citati vengono in parte classificati come impegni («Domani cancello ogni appuntamento», «cancella il calendario» come EVENT/COMMITTED), ma Z li blocca e non compare nessun popup,
 - in 052 («il prossimo fine settimana») viene proposto un evento anche se la data non permette di fissarlo: qui servirebbe una domanda di chiarimento.
 
 ## Cosa ne concludo
 
-Da queste prove ho capito che il numero di popup non dice se il sistema funziona. Un popup può essere giusto, incompleto (la riunione senza ora), oppure sbagliato; e l'assenza di popup può essere corretta (la strofa citata) o una perdita (la mail di 060). Per questo dalle prove successive ho valutato separatamente correttezza, completezza e attribuzione della proposta.
+Da queste prove ho capito che il numero di popup non dice se il sistema funziona. Un popup può essere giusto, incompleto (la riunione senza ora), oppure sbagliato. E l'assenza di popup può essere corretta (la strofa citata) o una perdita (la mail di 060). Per questo dalle prove successive ho valutato separatamente correttezza, completezza e attribuzione della proposta.
 
 Ho anche visto che un errore finale può nascere in punti diversi: X0 che spezza la frase, C che sbaglia l'etichetta, Z che blocca o lascia passare, S che sceglie un solo frammento. Per capirne la causa serve cambiare un componente alla volta, ed è così che ho impostato i confronti successivi (modelli, classificatore, selettore, estrazione).
 
@@ -55,4 +55,4 @@ Ho mantenuto X0+C0+Z+S con Qwen3-1.7B come riferimento. Limiti: le note sono sin
 
 ## Dati
 
-`01-primi-test-dati.csv` (30 righe): una riga per nota con l'esito della pipeline di riferimento X0+C0+Z+S su Qwen3-1.7B. `prova` distingue le sei parafrasi (`parafrasi_riunione`, dalla prova a 10 note) dalle 24 note di sviluppo (`development24`); `data_riferimento` è la data usata per interpretare «domani», «martedì» ecc.; `etichette` elenca i frammenti di X0 come `TIPO/INTENZIONE:testo`, separati da ` | `; `z_ammessi` e `selettore_ammessi` sono i candidati rimasti dopo Z e quelli ammessi dal selettore; `decisione` è `PROPOSE`, `CLARIFY` (popup con richiesta di chiarimento) o `NO_POPUP`; `tempo_s` è il tempo di inferenza per nota.
+`01-primi-test-dati.csv` (30 righe): una riga per nota con l'esito della pipeline di riferimento X0+C0+Z+S su Qwen3-1.7B. `prova` distingue le sei parafrasi (`parafrasi_riunione`, dalla prova a 10 note) dalle 24 note di sviluppo (`development24`). `data_riferimento` è la data usata per interpretare «domani», «martedì» ecc. `etichette` elenca i frammenti di X0 come `TIPO/INTENZIONE:testo`, separati da ` | `. `z_ammessi` e `selettore_ammessi` sono i candidati rimasti dopo Z e quelli ammessi dal selettore. `decisione` è `PROPOSE`, `CLARIFY` (popup con richiesta di chiarimento) o `NO_POPUP`. `tempo_s` è il tempo di inferenza per nota.

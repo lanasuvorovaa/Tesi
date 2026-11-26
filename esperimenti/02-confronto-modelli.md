@@ -6,7 +6,7 @@ Con Qwen3-1.7B la pipeline funzionava sui casi semplici ma sbagliava ancora pare
 
 ## Cosa ho fatto
 
-Tutti i modelli in formato GGUF Q4 (Qwen3-1.7B Q4 già presente sul Mac; Qwen3.5-2B Q4_K_M da bartowski; LFM2.5-1.2B-Instruct Q4_K_M ufficiale Liquid AI), una versione aggiornata e separata di llama.cpp, un modello alla volta sulla porta locale 8091, solo CPU. Parametri uguali per tutti: temperatura 0, seed 42, massimo 350 token, contesto 4096, JSON vincolato da schema. Nessuna ottimizzazione dei prompt per famiglia di modello.
+Tutti i modelli in formato GGUF Q4 (Qwen3-1.7B Q4 già presente sul Mac, Qwen3.5-2B Q4_K_M da bartowski, LFM2.5-1.2B-Instruct Q4_K_M ufficiale Liquid AI), una versione aggiornata e separata di llama.cpp, un modello alla volta sulla porta locale 8091, solo CPU. Parametri uguali per tutti: temperatura 0, seed 42, massimo 350 token, contesto 4096, JSON vincolato da schema. Nessuna ottimizzazione dei prompt per famiglia di modello.
 
 Le prove sono state quattro, in sequenza:
 
@@ -38,7 +38,7 @@ Il numero di popup qui inganna. Qwen3.5-2B con il prompt X0 spezzava le note in 
 | Qwen3-1.7B, X0+C0+Z+S | 0 | 11 | 3,54 |
 | Qwen3.5-2B, X1+C0+Z+S | 3 | 7 | 4,49 |
 
-Qwen3.5-2B segmenta meglio, ma classifica come `INFORMATIONAL` gran parte dei frammenti (17 su 33 sono FACT/INFORMATIONAL). Di conseguenza perde appuntamenti chiari: «La visita dal dentista è confermata per il 20 ottobre» (080) diventa FACT/INFORMATIONAL e «Giovedì alle 16 ho la visita con la fisioterapista» (107) EVENT/INFORMATIONAL, entrambi senza popup; in 024 tutte e tre le attività del trasloco sono INFORMATIONAL. Propone invece un popup di chiarimento su «Potrei incontrare Andrea o Luca venerdì» (076), che è solo un'ipotesi. I task con «devo» espliciti (011, 019, 079, 097, 118) vengono proposti da entrambi i sistemi.
+Qwen3.5-2B segmenta meglio, ma classifica come `INFORMATIONAL` gran parte dei frammenti (17 su 33 sono FACT/INFORMATIONAL). Di conseguenza perde appuntamenti chiari: «La visita dal dentista è confermata per il 20 ottobre» (080) diventa FACT/INFORMATIONAL e «Giovedì alle 16 ho la visita con la fisioterapista» (107) EVENT/INFORMATIONAL, entrambi senza popup. In 024 tutte e tre le attività del trasloco sono INFORMATIONAL. Propone invece un popup di chiarimento su «Potrei incontrare Andrea o Luca venerdì» (076), che è solo un'ipotesi. I task con «devo» espliciti (011, 019, 079, 097, 118) vengono proposti da entrambi i sistemi.
 
 ## Cosa ne concludo
 
@@ -48,4 +48,4 @@ Limiti: tutte le note sono note di sviluppo già conosciute, e il prompt X1 è s
 
 ## Dati
 
-`02-confronto-modelli-dati.csv` (78 righe): una riga per nota e per modello. `prova` è `fase1_10_note` (3 modelli × 10 note) o `fase2_24_note` (2 sistemi × 24 note); `sistema` indica la pipeline (`X0+C0+Z+S` o `X1+C0+Z+S`); `etichette` elenca i frammenti come `TIPO/INTENZIONE:testo`, separati da ` | `; `z_ammessi` e `selettore_ammessi` sono i candidati rimasti dopo Z e quelli ammessi dal selettore; `decisione` è `PROPOSE`, `CLARIFY` o `NO_POPUP`; `stato` è `ESEGUITO` o `SEGNALAZIONI`, con il dettaglio in `segnalazioni` (es. `QUOTE_8_INVALID_OR_NOT_UNIQUE`, citazione non trovata o non univoca nella nota). I due diagnostici per componente (LFM2.5 C0/C1 e Qwen3.5 X0/X1) non sono nel CSV: i loro numeri sono riportati sopra.
+`02-confronto-modelli-dati.csv` (78 righe): una riga per nota e per modello. `prova` è `fase1_10_note` (3 modelli × 10 note) o `fase2_24_note` (2 sistemi × 24 note). `sistema` indica la pipeline (`X0+C0+Z+S` o `X1+C0+Z+S`). `etichette` elenca i frammenti come `TIPO/INTENZIONE:testo`, separati da ` | `. `z_ammessi` e `selettore_ammessi` sono i candidati rimasti dopo Z e quelli ammessi dal selettore. `decisione` è `PROPOSE`, `CLARIFY` o `NO_POPUP`. `stato` è `ESEGUITO` o `SEGNALAZIONI`, con il dettaglio in `segnalazioni` (es. `QUOTE_8_INVALID_OR_NOT_UNIQUE`, citazione non trovata o non univoca nella nota). I due diagnostici per componente (LFM2.5 C0/C1 e Qwen3.5 X0/X1) non sono nel CSV: i loro numeri sono riportati sopra.
