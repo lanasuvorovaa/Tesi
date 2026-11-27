@@ -1,4 +1,4 @@
-# Assistente AI locale per la gestione delle note
+# Progettazione e valutazione di un assistente personale basato su Small Language Model on-device
 
 Questo repository raccoglie il prototipo e gli esperimenti che sto svolgendo per la mia tesi. L'obiettivo è costruire un assistente che lavori in locale, interpreti note scritte in linguaggio naturale e **proponga** attività o appuntamenti pertinenti, senza effettuare modifiche automatiche senza conferma.
 
